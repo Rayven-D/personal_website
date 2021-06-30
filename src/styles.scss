@@ -1,13 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/theming";
 
-@include mat-core();
-
-
-
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-
+:root{
+    --primary-color: #00BCD4;
+    --accent-color: #B0BEC5;
+    --warm-color: #3F51B5;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
