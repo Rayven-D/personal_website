@@ -1,6 +1,6 @@
 .toolbar {
     position: absolute;
-    background-color: 	rgba(63, 120, 200, .40);
+    background-color: 	rgb(0, 57, 138);
     height: 60px;
     top:0;
     left:0;
@@ -13,10 +13,19 @@
     padding-left: 25px;
     font-size: 30px;
     font-weight: 700;
-    color: var(--accent-color);
+    color: white;
+}
+nav {
+    align-self: flex-end;
+    height:100%;
+    margin-top:20px;
+}
+.mat-tab-list{
+    height:100%;
+    align-self: flex-end;
 }
 
-.mat-tab-label{
-    color:black;
-    font-weight: 500;
+.mat-tab-link{
+    height:60px;
+    color: white;
 }
