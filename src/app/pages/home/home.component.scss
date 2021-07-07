@@ -75,6 +75,11 @@
         background-color: var(--primary-color);
         height: 300px;
 
+        mat-card-title{
+            color:white;
+            font-size:35px;
+        }
+
         mat-card-content{
             height: 80%;
             text-align: center;
