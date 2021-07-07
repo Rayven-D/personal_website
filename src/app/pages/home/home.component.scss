@@ -1,4 +1,101 @@
-p{
-    position:absolute;
-    top:70px;
+.home-container{
+    margin-top: 60px;
+    width: 100%;
+    height:calc(100vh - 60px);
+    overflow: auto;
+    background-color: var(--background-color);
+}
+
+.home-information{
+    max-width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 1em;
+
+    .home-information-welcome {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 3;
+        text-align: center;
+        margin: auto;
+        border-bottom: 3px solid black;
+
+        span{
+            font-size: 5vw;
+            font-weight: 800;
+        }
+    }
+
+    .home-information-text{
+        grid-row: 2 / span 3;
+        grid-column: 1 /span 3;
+        margin: auto;
+
+        span {
+            font-size: 2vw;
+            font-weight: 500;
+            line-height: 35px;
+        }
+    }
+    
+    .home-information-picture{
+        grid-row: 1 / span 3;
+        grid-column: 4 / span 2;
+        height:100%;
+        align-self: center;
+         
+        img{
+            width: 80%;
+            margin: auto;
+        }
+    }
+
+}
+
+.programming-languages{
+    padding-top:40px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+
+    .languages-title{
+        grid-column: 1 / -1;
+        font-size: 40px;
+        height: 40px;
+        border-bottom: 2px solid black;
+    }
+
+    mat-card{
+        background-color: var(--primary-color);
+        height: 300px;
+
+        mat-card-content{
+            height: 80%;
+            text-align: center;
+            margin: 0 auto;
+            img{
+                margin: 0 auto;
+                height:100%;
+            }
+        }
+
+        mat-card-footer{
+            width:100%;
+            margin: 0 auto;
+            text-align:center;
+
+            mat-slider{
+                width: 100%;
+                ::ng-deep .mat-slider-track-fill, ::ng-deep .mat-slider-thumb {
+                    background-color:white;
+                }
+            }
+        }
+    }
 }

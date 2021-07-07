@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public test:number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    this.test = (this.test+7)%8;
   }
 
 }

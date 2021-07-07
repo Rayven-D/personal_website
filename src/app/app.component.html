@@ -6,7 +6,10 @@
         [routerLink]="link.link"
         routerLinkActive #rla="routerLinkActive"
         [active]="rla.isActive"
-        [style.opacity]='1'>{{link.label}}</a>
+        [style.opacity]='1'
+        [style.height.px]='60'
+        [style.padding]='0'
+        [style.min-width.px]='100'>{{link.label}}</a>
     </nav>
 </div>
 <router-outlet></router-outlet>
