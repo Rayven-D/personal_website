@@ -1,1 +1,15 @@
-<p>links works!</p>
+<div class="links-container">
+    <div class="links-wrapper">
+        <div class="links-header">
+            <span>Links</span>
+        </div>
+        <mat-card *ngFor="let s of socials" (click)="goToLink(s)">
+            <mat-card-title>{{s.name}}</mat-card-title>
+            <mat-card-content>
+                <img src={{s.source}}>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+</div>
+

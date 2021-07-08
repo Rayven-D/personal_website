@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Socials } from 'src/assets/data/social-links/socials.Socials';
+import { LinksService } from './links.service';
 
 @Component({
   selector: 'app-links',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinksComponent implements OnInit {
 
-  constructor() { }
+    public socials: Socials[] = [];
+
+  constructor(
+    private _linksService: LinksService
+  ) { }
 
   ngOnInit(): void {
+    this.socials = this._linksService.getSocialMedia();
+    console.log(this.socials);
+  }
+
+  goToLink(social: Socials): void {
+    window.open(social.links);
   }
 
 }
