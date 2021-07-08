@@ -13,6 +13,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResumeComponent } from './pages/resume/resume.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ResumeComponent } from './pages/resume/resume.component';
     MatSliderModule,
     MatTooltipModule,
     NgxExtendedPdfViewerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,15 @@
-<ngx-extended-pdf-viewer height="100vh" src="src\assets\data\pdf-files\resume.pdf"></ngx-extended-pdf-viewer>
+<div class="resume-page">
+    <div class="resume-wrapper">
+        <div class="resume-title">
+            <span class="title">Resume</span>
+        </div>
+        <div class="pdf-wrapper">
+            <ngx-extended-pdf-viewer
+                [src]="'/assets/data/pdf-files/resume.pdf'"
+                [useBrowserLocale]="true"
+                [height]="'100%'"
+                [zoom]="'100%'"
+            ></ngx-extended-pdf-viewer>
+        </div>
+    </div>
+</div>
