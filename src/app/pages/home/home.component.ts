@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgLanguages } from 'src/assets/data/prog-languages/prog-languages.Languages';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -6,15 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public test:number = 0;
+  public test: number = 0;
+  public languages: ProgLanguages[] = [];
+  public languageInFocus: ProgLanguages | null = null;
+  public showAllLanguages: boolean = false;
 
-  constructor() { }
+  constructor(
+    private homeService: HomeService
+    ) { }
 
-  ngOnInit(): void {
+  private getLanguages(): void{
+    this.languages = this.homeService.getLanguages();
   }
 
-  onClick(){
-    this.test = (this.test+7)%8;
+  ngOnInit(): void {
+    this.getLanguages();
+  }
+
+  onClick() {
+    this.test = (this.test + 7) % 8;
   }
 
 }
