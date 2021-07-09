@@ -1,4 +1,26 @@
-p{
-    position:absolute;
-    top:70px;
+.projects-page{
+    background-color: var(--background-color);
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    width: 100%;
+    overflow:auto;
+}
+
+.projects-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 80px;
+
+    .projects-title{
+        grid-column: 1 / -1;
+        border-bottom: 2px solid black;
+
+        .title{
+            font-size: 35px;
+            font-weight:500;
+        }
+    }
 }
