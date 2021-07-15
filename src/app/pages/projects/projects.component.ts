@@ -10,6 +10,7 @@ import { ProjectsService } from './projects.service';
 export class ProjectsComponent implements OnInit {
 
   public projects: Project[] = [];
+  public selectedProject: number = -1;
 
   constructor(
     private _projectsService: ProjectsService
@@ -19,13 +20,11 @@ export class ProjectsComponent implements OnInit {
     this.projects = this._projectsService.getProjects();
   }
 
-  public panelOpened(index: number): void{
-    let elem = document.getElementById(index+"");
-    if(elem === null) return;
-    console.log(elem);
-    elem.setAttribute('style', 'transition: all 3s ease; grid-column: 1 / -1;');
-
-
+  panelOpened(index: number){
+    let inner = document.createElement(this.projects[index].app)
+    let outer = document.getElementById(`${index}`);
+    outer?.appendChild(inner);
+    console.log(outer);
+    console.log(document.getElementById(`panel${index}`))
   }
-
 }

@@ -3,12 +3,14 @@
         <div class="projects-title">
             <span class="title">Projects</span>
         </div>
-        <mat-expansion-panel  *ngFor="let p of projects; index as i" id={{i}} (opened)="panelOpened(i)">
-            <mat-expansion-panel-header>
-                <mat-panel-title>{{p.name}}</mat-panel-title>
-                <mat-panel-description>{{p.language}}</mat-panel-description>
-            </mat-expansion-panel-header>
-        </mat-expansion-panel>
+        <div class="no-project-selected">
+            <mat-expansion-panel  *ngFor="let p of projects; index as i" (opened)="panelOpened(i)">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>{{p.name}}</mat-panel-title>
+                    <mat-panel-description>{{p.language}}</mat-panel-description>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+        </div>
     </div>
 </div>
 
