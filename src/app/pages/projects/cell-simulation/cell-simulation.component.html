@@ -1,1 +1,94 @@
-<p>cell-simulation works!</p>
+<div class="project-container">
+    <div class="project-title">Cell Simulation</div>
+    <div class="project-summary"> 
+        The cell simulation is a program that simulates a colony of cells 
+        growth and deaths. It compares each cell with their neighbors to determine
+        if the cell will die or be alive in the next step, doing 
+        this to every cell for 100 steps.This program makes use of multiprocessing to handle the arrays, and
+        it was tested with 10,000 x 10,000 array size, only taking less than
+        20 minutes with 36 processes. 
+    </div>
+    <div class="project-img">
+        <img src="assets/img/projects/CellSim.png"/>
+    </div>
+    <div class="more-info">
+        <span class="more-info-title">Rules</span>
+        <div class="rules">
+            <div class="rules-summary">
+                <p>
+                    Each cell has two states:<br>
+                    <code>
+                    &nbsp;&nbsp;O : Alive <br>
+                    &nbsp;&nbsp;. : Dead
+                    </code>
+                </p>
+                
+                <p>A cell's state in the next step will be determined by its neighbors and it's current state:</p>
+                <ul>
+                    <li>If the cell is alive and has 2 - 4 alive neighbors, it will stay alive in the next step.</li>
+                    <li>If the cell is dead and there is an even number >0 of alive neighbors, it will become alive in the next step.</li>
+                    <li>Otherwise, the cell becomes or stays dead.</li>
+                </ul>
+            </div>
+            <div class="rules-summary-2">
+                <p>
+                    A cell's neighbors are as follows:<br>
+                    <code>
+                           _ _ _ _ _   C N _ _ N <br>
+                           _ N N N _   N N _ _ N <br>
+                           _ N C N _   _ _ _ _ _ <br>
+                           _ N N N _   _ _ _ _ _ <br>
+                           _ _ _ _ _   N N _ _ N <br>
+                    </code>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="demo">
+        <span class="demo-title">Simulation Run</span>
+        <div class="simulation-description">
+            <p>
+                To run the simulation, click the green play button on the top.
+                <br><br>
+                Follow the promt on the screen. 
+                <br><br>
+                After everything is done it will display how long it took. 
+                <br>
+                <sup><sub>Times might be slower than times from the HPCC @TTU</sub></sup>
+            </p>
+        </div>
+        <div class="simulation-run">
+            <iframe src="https://repl.it/@RjDeray/CellSimulationCS3361?lite=true&amp;outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </div>
+    </div>
+    <div class="current-times">
+        <span class="current-times-title">Current Times</span>
+        <div class="current-times-seconds">
+            <code>
+                100x100 array<br>
+                 1   thread:  2.870863284<br>
+                 2   threads:  .880522093 <br>
+                 4   threads:  .666691255 <br>
+                 8   threads:  .492846057  <br>
+                 16  threads:  .681837124 <br>
+                 32  threads:  .976690614 <br>
+                <br>
+                1000x1000 array<br>
+                 1   thread:  117.039384358  <br>
+                 2   threads:  66.319961146 <br>
+                 4   threads:  38.543000157 <br>
+                 8   threads:  24.232261485 <br>
+                 16  threads:  14.619499583 <br>
+                 32  threads:  11.542806292 <br>
+                <br>
+                10000x10000 array<br>
+                 9   threads:  1749.598217939 <br>
+                 18  threads:  1089.754576722  <br>
+                 36  threads:  835.519872763 <br>
+                <br>
+                  Wall-Clock Time: ~ 1h 7m
+            </code>
+        </div>
+    </div>
+</div>
+
