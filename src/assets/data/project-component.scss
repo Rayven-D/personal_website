@@ -16,14 +16,18 @@
 
 .project-summary{
     font-size:22px;
-    line-height: 20px;
+    line-height: 25px;
+    
+    .project-summary-language{
+        font-weight:700;
+    }
 }
 
 .project-img{
     height:auto;
     text-align: center;
     img{
-        height:200px;
+        height:250px;
         filter: brightness(0);
     }
 }
