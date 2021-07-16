@@ -7,7 +7,8 @@
 }
 
 .projects-wrapper{
-    display: block;
+    display: grid;
+    gap: 10px;
     width: 80%;
     margin: 0 auto;
     padding-top: 80px;
@@ -20,15 +21,31 @@
             font-weight:500;
         }
     }
-}
 
-.no-project-selected{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-    padding-top: 10px;
-    
-    mat-expantion-panel{
-        height: 40px;
+    mat-tab-group{
+        ::ng-deep .mat-tab-header{
+            border-radius: 10px 10px 0 0;
+            height:auto;
+        }
+        ::ng-deep .mat-tab-labels{
+            display: flex;
+            gap: 3px;
+        }
+        ::ng-deep .mat-tab-label{
+            background-color:rgba(0,0,0, .1);
+            color: #3F51B5;
+            border-radius: 10px 10px 0 0;
+            opacity: 1;
+        }
+        ::ng-deep .mat-tab-label-active, cdk-focused, cdk-mouse-focused{
+            background-color: #3F51B5;
+            color:white;
+            opacity: 1;
+            
+        }
+        ::ng-deep .mat-tab-body-wrapper{
+        }   
+
     }
 }
+

@@ -3,14 +3,10 @@
         <div class="projects-title">
             <span class="title">Projects</span>
         </div>
-        <div class="no-project-selected">
-            <mat-expansion-panel  *ngFor="let p of projects; index as i" (opened)="panelOpened(i)">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>{{p.name}}</mat-panel-title>
-                    <mat-panel-description>{{p.language}}</mat-panel-description>
-                </mat-expansion-panel-header>
-            </mat-expansion-panel>
-        </div>
+        <mat-tab-group>
+            <mat-tab label="Cell Simulation"><app-cell-simulation></app-cell-simulation></mat-tab>
+            <mat-tab label="Dice Game"><app-dice-game></app-dice-game></mat-tab>
+            <mat-tab label="Healthcare"><app-healthcare></app-healthcare></mat-tab>
+        </mat-tab-group>           
     </div>
 </div>
-

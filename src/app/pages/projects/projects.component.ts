@@ -1,30 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Project } from 'src/assets/data/project-routes/project.Project';
-import { ProjectsService } from './projects.service';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router, Routes } from '@angular/router';
+import { CellSimulationComponent } from './cell-simulation/cell-simulation.component';
+import { DiceGameComponent } from './dice-game/dice-game.component';
+import { HealthcareComponent } from './healthcare/healthcare.component';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
 
-  public projects: Project[] = [];
   public selectedProject: number = -1;
 
-  constructor(
-    private _projectsService: ProjectsService
-  ) { }
-
-  ngOnInit(): void {
-    this.projects = this._projectsService.getProjects();
+  constructor() { }  
+  public panelOpened(index: number){
+    console.log(index);
   }
 
-  panelOpened(index: number){
-    let inner = document.createElement(this.projects[index].app)
-    let outer = document.getElementById(`${index}`);
-    outer?.appendChild(inner);
-    console.log(outer);
-    console.log(document.getElementById(`panel${index}`))
-  }
 }
