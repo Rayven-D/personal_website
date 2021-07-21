@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/rayven-website",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
