@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'rayven-website';
   navLinks: any[];
   activeLinkIndex = -1;
+  isMobile = GlobalVars.isMobile;
   constructor(private router: Router) {
     this.navLinks = [
       {
@@ -44,12 +45,14 @@ export class AppComponent {
         document.getElementsByTagName("body")[0].classList.add('mobile');
       })
       GlobalVars.isMobile = true;
+      this.isMobile = true;
 
     }else{
       document.addEventListener("DOMContentLoaded", function() {
         document.getElementsByTagName("body")[0].classList.add('desktop')
       })
       GlobalVars.isMobile = false;
+      this.isMobile = false;
     }
   }
 

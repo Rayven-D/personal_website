@@ -19,6 +19,10 @@ import { CellSimulationComponent } from './pages/projects/cell-simulation/cell-s
 import { DiceGameComponent } from './pages/projects/dice-game/dice-game.component';
 import { HealthcareComponent } from './pages/projects/healthcare/healthcare.component';
 import { MatExpansionModule } from '@angular/material/expansion'
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,10 @@ import { MatExpansionModule } from '@angular/material/expansion'
     NgxExtendedPdfViewerModule,
     BrowserAnimationsModule,
     PdfViewerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
