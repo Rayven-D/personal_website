@@ -10,8 +10,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html, body { 
+html, body.desktop { 
     overflow:hidden;
+}
+
+html, body.mobile{
+    overflow:auto;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

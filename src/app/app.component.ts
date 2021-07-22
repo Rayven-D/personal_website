@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalVars } from './pages/common/global-vars';
 
 @Component({
   selector: 'app-root',
@@ -37,5 +38,19 @@ export class AppComponent {
     this.router.events.subscribe((res) => {
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
     });
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // true for mobile device
+      document.addEventListener("DOMContentLoaded", function() {
+        document.getElementsByTagName("body")[0].classList.add('mobile');
+      })
+      GlobalVars.isMobile = true;
+
+    }else{
+      document.addEventListener("DOMContentLoaded", function() {
+        document.getElementsByTagName("body")[0].classList.add('desktop')
+      })
+      GlobalVars.isMobile = false;
+    }
   }
+
 }

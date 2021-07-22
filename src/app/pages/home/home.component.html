@@ -19,7 +19,7 @@
     <div class="programming-languages">
         <div class="languages-top">
             <span class="languages-title">Languages</span>
-            <span class="toggle-all-values">
+            <span class="toggle-all-values" *ngIf="!isMobile">
                 <mat-slide-toggle color='primary' matTooltip="Show all competance values" [checked]='false' [matTooltipPosition]="'above'" (toggleChange)="showAllLanguages = !showAllLanguages"></mat-slide-toggle>
             </span>
 

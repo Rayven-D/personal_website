@@ -1,122 +1,246 @@
-.home-container{
-    margin-top: 60px;
-    width: 100%;
-    height:calc(100vh - 60px);
-    overflow: auto;
-    background-color: var(--background-color);
-}
+:host-context(.desktop){
 
-.home-information{
-    max-width: 80%;
-    height: 400px;
-    margin: 0 auto;
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-gap: 1em;
-
-    .home-information-welcome {
-        grid-row: 1 / span 1;
-        grid-column: 1 / span 3;
-        text-align: center;
-        margin: auto;
-        border-bottom: 3px solid black;
-
-        span{
-            font-size: 5vw;
-            font-weight: 800;
-        }
-    }
-
-    .home-information-text{
-        grid-row: 2 / span 3;
-        grid-column: 1 /span 3;
-        margin: auto;
-
-        span {
-            font-size: 2vw;
-            font-weight: 500;
-            line-height: 35px;
-        }
+    .home-container{
+        margin-top: 60px;
+        width: 100%;
+        height:calc(100vh - 60px);
+        overflow: auto;
+        background-color: var(--background-color);
     }
     
-    .home-information-picture{
-        grid-row: 1 / span 3;
-        grid-column: 4 / span 2;
-        height:100%;
-        align-self: center;
-         
-        img{
-            width: 70%;
-            float:right;
+    .home-information{
+        max-width: 80%;
+        height: 400px;
+        margin: 0 auto;
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 1em;
+    
+        .home-information-welcome {
+            grid-row: 1 / span 1;
+            grid-column: 1 / span 3;
+            text-align: center;
             margin: auto;
+            border-bottom: 3px solid black;
+    
+            span{
+                font-size: 5vw;
+                font-weight: 800;
+            }
+        }
+    
+        .home-information-text{
+            grid-row: 2 / span 3;
+            grid-column: 1 /span 3;
+            margin: auto;
+    
+            span {
+                font-size: 2vw;
+                font-weight: 500;
+                line-height: 35px;
+            }
+        }
+        
+        .home-information-picture{
+            grid-row: 1 / span 3;
+            grid-column: 4 / span 2;
+            height:100%;
+            align-self: center;
+             
+            img{
+                width: 70%;
+                float:right;
+                margin: auto;
+            }
+        }
+    
+    }
+    
+    .programming-languages{
+        padding-top:40px;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 80%;
+        margin: 0 auto;
+    
+        .languages-top{
+            grid-column: 1 / -1;
+            font-size: 40px;
+            height: 60px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid black;
+    
+            .languages-title{
+                margin: auto 0;
+            }
+    
+            .toggle-all-values{
+                margin: auto 0;
+                span{
+                    font-size: 10px;
+                    margin: 0;
+                }
+            }
+        }
+    
+        mat-card{
+            background-color: var(--primary-color);
+            height: 300px;
+    
+            mat-card-title{
+                color:white;
+                font-size:2vw;
+                padding-bottom: 10px;
+            }
+    
+            mat-card-content{
+                height: 80%;
+                text-align: center;
+                margin: 0 auto;
+                img{
+                    margin: 0 auto;
+                    height:100%;
+                }
+            }
+    
+            mat-card-footer{
+                width:100%;
+                margin: 0 auto;
+                text-align:center;
+    
+                mat-slider{
+                    width: 100%;
+                    margin: 0;
+                    ::ng-deep .mat-slider-track-fill, ::ng-deep .mat-slider-thumb {
+                        background-color:white;
+                    }
+                }
+            }
         }
     }
-
 }
 
-.programming-languages{
-    padding-top:40px;
-    padding-bottom: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 80%;
-    margin: 0 auto;
+:host-context(.mobile){
 
-    .languages-top{
-        grid-column: 1 / -1;
-        font-size: 40px;
-        height: 60px;
+    .home-container{
+        margin-top: 60px;
+        width: 100%;
+        height:calc(100% - 60px);
+        overflow: auto;
+        background-color: var(--background-color);
         display:flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid black;
-
-        .languages-title{
-            margin: auto 0;
-        }
-
-        .toggle-all-values{
-            margin: auto 0;
-            span{
-                font-size: 10px;
-                margin: 0;
-            }
-        }
+        flex-direction: column;
     }
-
-    mat-card{
-        background-color: var(--primary-color);
-        height: 300px;
-
-        mat-card-title{
-            color:white;
-            font-size:2vw;
-            padding-bottom: 10px;
-        }
-
-        mat-card-content{
-            height: 80%;
+    
+    .home-information{
+        max-width: 80%;
+        height: 400px;
+        margin: 0 auto;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1em;
+    
+        .home-information-welcome {
             text-align: center;
-            margin: 0 auto;
-            img{
-                margin: 0 auto;
-                height:100%;
+            margin: auto;
+            border-bottom: 3px solid black;
+    
+            span{
+                font-size: 35px;
+                font-weight: 800;
             }
         }
-
-        mat-card-footer{
-            width:100%;
-            margin: 0 auto;
-            text-align:center;
-
-            mat-slider{
-                width: 100%;
-                margin: 0;
-                ::ng-deep .mat-slider-track-fill, ::ng-deep .mat-slider-thumb {
-                    background-color:white;
+    
+        .home-information-text{
+            margin: auto;
+    
+            span {
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+        
+        .home-information-picture{
+            height:100%;
+            display:flex;
+            align-content: center;
+            justify-content: center;
+             
+            img{
+                width: 70%;
+                
+            }
+        }
+    
+    }
+    
+    .programming-languages{
+        padding-top:120px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 auto;
+    
+        .languages-top{
+            font-size: 40px;
+            height: 60px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid black;
+    
+            .languages-title{
+                margin: auto 0;
+            }
+    
+            .toggle-all-values{
+                margin: auto 0;
+                span{
+                    font-size: 10px;
+                    margin: 0;
+                }
+            }
+        }
+    
+        mat-card{
+            background-color: var(--primary-color);
+            height: 300px;
+    
+            mat-card-title{
+                color:white;
+                font-size:25px;
+                padding-bottom: 10px;
+            }
+    
+            mat-card-content{
+                height: 80%;
+                text-align: center;
+                margin: 0 auto;
+                img{
+                    margin: 0 auto;
+                    height:100%;
+                }
+            }
+    
+            mat-card-footer{
+                width:100%;
+                margin: 0 auto;
+                text-align:center;
+    
+                mat-slider{
+                    width: 100%;
+                    margin: 0;
+                    ::ng-deep .mat-slider-track-fill, ::ng-deep .mat-slider-thumb {
+                        background-color:white;
+                    }
                 }
             }
         }
