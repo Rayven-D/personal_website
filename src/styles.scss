@@ -6,10 +6,13 @@
     --warm-color: #3F51B5;
     --background-color: rgba(0,0,0, .1)
 }
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
     overflow: hidden;
 }
+
 
 html, body.desktop { 
     overflow:hidden;
@@ -18,8 +21,6 @@ html, body.desktop {
 html, body.mobile{
     overflow:auto;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 ::-webkit-scrollbar{
     width: 10px;
 }
