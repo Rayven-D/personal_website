@@ -1,37 +1,80 @@
-.toolbar {
-    position: fixed;
-    background-color: 	rgb(0, 57, 138);
-    width:100vw;
-    height: 60px;
-    top:0;
-    left:0;
-    right:0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 10;
+.desktop{
+    .toolbar {
+        position: fixed;
+        background-color: 	rgb(0, 57, 138);
+        width:100vw;
+        height: 60px;
+        top:0;
+        left:0;
+        right:0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 10;
+    }
+    
+    .name-title {
+        vertical-align: middle;
+        padding-left: 25px;
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+    }
+    nav {
+        align-self: flex-end;
+        height:100%;
+        margin-top:20px;
+        right:0;
+    }
+    .mat-tab-list{
+        height:100%;
+        align-self: flex-end;
+    }
+    
+    .mat-tab-link{
+        height: 60px;
+        padding-top:30px;
+        color: white;
+    }
+}
+.mobile{
+
+    .toolbar {
+        position: fixed;
+        background-color: 	rgb(0, 57, 138);
+        width:100vw;
+        height: 60px;
+        top:0;
+        left:0;
+        right:0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 10;
+    }
+    
+    .name-title {
+        vertical-align: middle;
+        padding-left: 25px;
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+    }
+    nav {
+        align-self: flex-end;
+        height:100%;
+        margin-top:20px;
+        right:0;
+    }
+    .mat-tab-list{
+        height:100%;
+        align-self: flex-end;
+    }
+    
+    .mat-tab-link{
+        height: 60px;
+        padding-top:30px;
+        color: white;
+    }
 }
 
-.name-title {
-    vertical-align: middle;
-    padding-left: 25px;
-    font-size: 30px;
-    font-weight: 700;
-    color: white;
-}
-nav {
-    align-self: flex-end;
-    height:100%;
-    margin-top:20px;
-    right:0;
-}
-.mat-tab-list{
-    height:100%;
-    align-self: flex-end;
-}
-
-.mat-tab-link{
-    height: 60px;
-    padding-top:30px;
-    color: white;
-}

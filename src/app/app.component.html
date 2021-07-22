@@ -1,6 +1,6 @@
 <div class="toolbar">
     <span class="name-title">Rayven Jan Deray</span>
-    <nav mat-tab-nav-bar>
+    <nav mat-tab-nav-bar *ngIf="!isMobile">
       <a mat-tab-link
         *ngFor="let link of navLinks"
         [routerLink]="link.link"
@@ -11,5 +11,16 @@
         [style.padding]='0'
         [style.min-width.px]='100'>{{link.label}}</a>
     </nav>
+    <button mat-icon-button *ngIf="isMobile" [mat-menu-trigger-for]="menu" style="color:white">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button *ngFor="let link of navLinks"
+              [routerLink]='link.link'
+              mat-menu-item
+      >{{link.label}}</button>
+    </mat-menu>
 </div>
+
+
 <router-outlet></router-outlet>
