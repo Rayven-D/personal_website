@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalVars } from '../common/global-vars';
+import { GlobalVars } from '../../common/global-vars';
 
 @Component({
   selector: 'app-resume',

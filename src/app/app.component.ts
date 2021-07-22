@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { GlobalVars } from './pages/common/global-vars';
+import { GlobalVars } from './common/global-vars';
 
 @Component({
   selector: 'app-root',

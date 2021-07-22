@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProgLanguages } from 'src/assets/data/prog-languages/prog-languages.Languages';
 import { HomeService } from './home.service';
-import { GlobalVars } from '../common/global-vars';
+import { GlobalVars } from '../../common/global-vars';
 
 @Component({
   selector: 'app-home',
