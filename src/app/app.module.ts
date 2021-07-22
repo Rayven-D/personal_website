@@ -10,10 +10,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResumeComponent } from './pages/resume/resume.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { CellSimulationComponent } from './pages/projects/cell-simulation/cell-simulation.component';
 import { DiceGameComponent } from './pages/projects/dice-game/dice-game.component';
@@ -44,9 +42,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSlideToggleModule,
     MatSliderModule,
     MatTooltipModule,
-    NgxExtendedPdfViewerModule,
     BrowserAnimationsModule,
-    PdfViewerModule,
     MatExpansionModule,
     MatButtonModule,
     MatIconModule,
