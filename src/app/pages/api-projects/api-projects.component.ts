@@ -12,7 +12,7 @@ export class ApiProjectsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const temp =  fetch( GlobalVars.WEATHER_URL_BASE + "getTemp", {headers: Access-Control-Allow-Origin}).then( (response) =>{
+    const temp =  fetch( GlobalVars.WEATHER_URL_BASE + "getTemp").then( (response) =>{
       console.log(response);
     })
   }
