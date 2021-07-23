@@ -30,6 +30,10 @@ export class AppComponent {
       }, {
         label: 'Links',
         link: './links',
+        index: 3
+      }, {
+        label: 'API Projects',
+        link: './api-projects',
         index: 4
       }
     ]
