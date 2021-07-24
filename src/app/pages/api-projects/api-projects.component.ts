@@ -8,13 +8,30 @@ import { GlobalVars } from 'src/app/common/global-vars';
 })
 export class ApiProjectsComponent implements OnInit {
 
-  public temp: any;
+  public weatherTemp: number | string = "";
+  public weatherCity: string = "Loading...";
+  public weatherType: string = "";
+  public finishedWeather: boolean = false;
   constructor() { }
 
-  ngOnInit(): void {
-    const temp =  fetch( GlobalVars.WEATHER_URL_BASE + "getTemp").then( (response) =>{
-      console.log(response);
-    })
+  async ngOnInit() {
+    this.getLocalWeather();
+  }
+
+  public getLocalWeather(){
+    navigator.geolocation.getCurrentPosition( (pos) => {
+      fetch( GlobalVars.WEATHER_URL_BASE + "getTemp" + `?lat=${pos.coords.latitude}&long=${pos.coords.longitude}`).then( (response) =>{
+        response.json().then( data => {
+          console.log(data)
+          this.weatherCity = data.name;
+          this.weatherType = data.weather[0].description;
+          this.weatherTemp = Math.round(data.main.temp);
+        })
+      })
+    }, (error) => { 
+      console.log("Failed to get location"); 
+      this.weatherTemp = "Can't get location. Did you reject location?";
+    })  
   }
 
 }

@@ -1,1 +1,18 @@
-<p>api-projects works!</p>
+<div class="api-container">
+    <div class="api-cards-wrapper">
+        <span class="page-title">
+            API Projects
+        </span>
+        <mat-card class="weather-card api-card">
+            <mat-card-title>
+                <span class="weather-city">{{weatherCity}}</span>
+            </mat-card-title>
+            <mat-card-content>
+                <span class="weather-temp">{{weatherTemp}}<sup *ngIf="weatherTemp != ''">°F</sup></span>
+            </mat-card-content>
+            <mat-card-footer>
+                <span class="weather-type">{{weatherType}}</span>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>

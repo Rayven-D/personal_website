@@ -1,6 +1,4 @@
 import * as functions from "firebase-functions";
-import * as cors from "cors";
-import * as express from "express";
 import OpenWeatherMap from "openweathermap-ts";
 
 
@@ -9,17 +7,13 @@ const openweather = new OpenWeatherMap({
     language: "en",
 });
 
-const expr = express();
-expr.use(cors({origin: true}))
-
 export const getTemp = functions.https.onRequest((req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-    res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS');
-    res.set('Access-Control-Allow-Headers', '*');
+    let lat:number = +(req.query.lat ?? "0" );
+    let long:number = +(req.query.long ?? "0");
 
-    openweather.getCurrentWeatherByCityName({
-        cityName: "Lubbock",
-    }).then( (weather) => {
-        res.send(weather.main.temp);
+    res.set('Access-Control-Allow-Origin', '*');
+
+    openweather.getCurrentWeatherByGeoCoordinates(lat, long).then( (weather) => {
+        res.send(weather);
     })
 });

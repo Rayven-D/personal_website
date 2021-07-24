@@ -1,0 +1,58 @@
+:host-context(.desktop){
+    .api-container{
+        margin-top: 60px;
+        width: 100%;
+        height:calc(100vh - 60px);
+        overflow: auto;
+        background-color: var(--background-color);
+    }
+    .api-cards-wrapper{
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 40px;
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        .page-title{
+            grid-column: 1 / -1;
+            border-bottom: 2px solid black;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+
+        .api-card{
+            background-color: var(--primary-color);
+            color: #fff; 
+            height: 200px;
+        }
+
+    }
+
+    .weather-card{
+
+        .weather-city{
+            font-size: 30px
+        }
+
+        mat-card-content{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            height: 80%;
+            .weather-temp {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                font-size: 160px;
+
+                sup{
+                    align-self:flex-start;
+                    padding-top: 20px;
+                    font-size:60px;
+                }
+            }
+        }
+    }
+}
