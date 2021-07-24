@@ -78,10 +78,24 @@
     
         mat-tab-group{
             width: 80vw;
-            ::ng-deep .mat-tab-header{
-                border-radius: 10px 10px 0 0;
-                height:auto;
+            ::ng-deep .mat-tab-header-pagination{
+                display:none;
             }
+            ::ng-deep .mat-tab-header{
+                height:auto;
+                overflow-x: scroll !important;
+                border-bottom: none;
+
+            }
+            ::ng-deep .mat-tab-header::-webkit-scrollbar{
+                height:2px;
+                border: none;
+            }
+
+            ::ng-deep .mat-tab-header::-webkit-scrollbar-thumb{
+                background: var(--primary-color);
+            }
+
             ::ng-deep .mat-tab-labels{
                 display: flex;
                 gap: 3px;
@@ -91,6 +105,12 @@
                 color: #3F51B5;
                 border-radius: 10px 10px 0 0;
                 opacity: 1;
+            }
+            ::ng-deep .mat-tab-label-container{
+                overflow: visible !important;
+            }
+            ::ng-deep .mat-ink-bar{
+                display:none;
             }
             ::ng-deep .mat-tab-label-active, cdk-focused, cdk-mouse-focused{
                 background-color: #3F51B5;
