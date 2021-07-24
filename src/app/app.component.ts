@@ -62,4 +62,8 @@ export class AppComponent {
     }
   }
 
+  public goHome(){
+    this.router.navigate(["./home"]);
+  }
+
 }

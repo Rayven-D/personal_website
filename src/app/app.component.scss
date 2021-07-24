@@ -15,10 +15,10 @@
     
     .name-title {
         vertical-align: middle;
-        padding-left: 25px;
         font-size: 30px;
         font-weight: 700;
         color: white;
+        cursor: pointer;
     }
     nav {
         align-self: flex-end;
@@ -55,7 +55,6 @@
     
     .name-title {
         vertical-align: middle;
-        padding-left: 25px;
         font-size: 30px;
         font-weight: 700;
         color: white;
@@ -78,3 +77,16 @@
     }
 }
 
+#signature {
+    stroke-dasharray: 832;
+    stroke-dashoffset: 832;
+    animation: sign 3s ease-out;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes sign {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
