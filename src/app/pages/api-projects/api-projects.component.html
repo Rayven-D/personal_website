@@ -9,6 +9,7 @@
             </mat-card-title>
             <mat-card-content>
                 <span class="weather-temp">{{weatherTemp}}<sup *ngIf="weatherTemp != ''">°F</sup></span>
+                <img height="75px" width="75px" *ngIf="weatherTemp != ''" src="{{weatherIcon}}"/>
             </mat-card-content>
             <mat-card-footer>
                 <span class="weather-type">{{weatherType}}</span>
