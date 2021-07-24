@@ -23,7 +23,6 @@ export class ApiProjectsComponent implements OnInit {
     navigator.geolocation.getCurrentPosition( (pos) => {
       fetch( GlobalVars.WEATHER_URL_BASE + "getTemp" + `?lat=${pos.coords.latitude}&long=${pos.coords.longitude}`).then( (response) =>{
         response.json().then( data => {
-          console.log(data)
           this.weatherCity = data.name;
           this.weatherType = data.weather[0].description
           this.weatherType = this.weatherType.split(" ").map( (val) => val.charAt(0).toUpperCase() + val.substring(1)).join(" ");

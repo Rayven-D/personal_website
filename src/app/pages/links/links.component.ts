@@ -17,7 +17,6 @@ export class LinksComponent implements OnInit {
 
   ngOnInit(): void {
     this.socials = this._linksService.getSocialMedia();
-    console.log(this.socials);
   }
 
   goToLink(social: Socials): void {
