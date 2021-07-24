@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { LinksComponent } from './pages/links/links.component';
+import { ApiProjectsComponent } from './pages/api-projects/api-projects.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/home', pathMatch: 'full'},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'projects', component:ProjectsComponent},
   {path:'resume', component: ResumeComponent},
   {path:'links', component:LinksComponent},
+  {path:'api-projects', component: ApiProjectsComponent}
 ];
 export const appRouting = RouterModule.forRoot(routes);
 @NgModule({

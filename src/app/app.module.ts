@@ -20,6 +20,7 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { ApiProjectsComponent } from './pages/api-projects/api-projects.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatMenuModule } from '@angular/material/menu';
     ProjectsComponent,
     CellSimulationComponent,
     DiceGameComponent,
-    HealthcareComponent
+    HealthcareComponent,
+    ApiProjectsComponent
   ],
   imports: [
     BrowserModule,
