@@ -3,6 +3,11 @@
         <div class="github-title">
             <span>Public GitHub Repos</span>
         </div>
+        <div class="error-message" *ngIf="errorEncounterd">
+            <span>Failed to fetch repos...</span>
+            <span>Fetch limit exceeded</span>
+        </div>
+        <app-loading class="loading-repos" *ngIf="!reposLoaded"></app-loading>
         <mat-card (click)="navToRepo(r.url)" class="github-repos" *ngFor="let r of repos">
             <mat-card-title>{{r.name}}</mat-card-title>
         </mat-card>

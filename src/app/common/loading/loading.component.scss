@@ -7,16 +7,22 @@
 
     .spinning-letter{
         display: block;
-        font-size:80px;
-        line-height: 90px;
         font-weight: 900;
         
         #loading-first-name {
             stroke: black;
             stroke-dasharray: 1231;
             stroke-dashoffset: 1231;
-            animation: writing 2s ease infinite;    
+            animation: writing-first 4s ease infinite;    
             stroke-width: 5px;        
+        }
+
+        #loading-second-name{
+            stroke: black;
+            stroke-dasharray: 545;
+            stroke-dashoffset: 545;
+            animation: writing-second 4s ease infinite;    
+            stroke-width:4px;
         }
     }
 
@@ -31,8 +37,23 @@
     }
 }
 
-@keyframes writing {
-    to{
+@keyframes writing-first {
+    50%{
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes writing-second{
+    50%{
+        stroke-dashoffset:545 ;
+    }
+    85%{
+        stroke-dashoffset: 0;
+    }
+    100%{
         stroke-dashoffset: 0;
     }
 }

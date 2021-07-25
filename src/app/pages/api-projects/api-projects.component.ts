@@ -9,14 +9,18 @@ import { GlobalVars } from 'src/app/common/global-vars';
 export class ApiProjectsComponent implements OnInit {
 
   public weatherTemp: number | string = "";
-  public weatherCity: string = "Loading...";
+  public weatherCity: string = "";
   public weatherType: string = "";
   public weatherIcon: string ="http://openweathermap.org/img/wn/"
-  public finishedWeather: boolean = false;
+  public loadedWeather: boolean = false;
   constructor() { }
 
   ngOnInit() {
-    this.getLocalWeather();
+    this.getLocalWeather().then( () => {
+      setTimeout( () => {
+        this.loadedWeather = true;
+      },100000000)
+    });
   }
 
   public async getLocalWeather(){

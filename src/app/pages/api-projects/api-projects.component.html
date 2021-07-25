@@ -3,7 +3,7 @@
         <div class="page-title">
             <span class="title">API Projects</span>
         </div>
-        <mat-card class="weather-card api-card">
+        <mat-card class="weather-card api-card" *ngIf="loadedWeather else loading">
             <mat-card-title>
                 <span class="weather-city">{{weatherCity}}</span>
             </mat-card-title>
@@ -15,6 +15,13 @@
                 <span class="weather-type">{{weatherType}}</span>
             </mat-card-footer>
         </mat-card>
-        <app-loading></app-loading>
     </div>
 </div>
+
+<ng-template #loading>
+    <mat-card class="weather-card loading api-card">
+        <mat-card-content>
+            <app-loading [color]="'#FFF'"></app-loading>
+        </mat-card-content>
+    </mat-card>
+</ng-template>
