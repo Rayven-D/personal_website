@@ -8,7 +8,8 @@ export const getRepos = functions.https.onRequest( (req, res)  => {
         path: '/users/Rayven-D/repos?sort=updated&direction=desc',
         method: 'GET',
         headers: {
-            'user-agent': 'node.js'
+            'user-agent': 'node.js',
+            'Authorization': functions.config().spotify.repoaccesstoken,
         }
     }
 
