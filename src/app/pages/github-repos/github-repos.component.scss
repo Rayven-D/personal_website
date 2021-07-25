@@ -1,0 +1,33 @@
+:host-context(.desktop){
+    .github-page{
+        margin-top: 60px;
+        width: 100%;
+        height:calc(100vh - 60px);
+        overflow: auto;
+        background-color: var(--background-color);
+    }
+    .github-wrapper{
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 60px;
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        .github-title{
+            border-bottom: 2px solid black;
+            grid-column: 1 / -1;
+
+            span {
+                font-size: 35px;
+                font-weight:500;
+            }
+        }
+
+        .github-repos{
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color:white;
+        }
+    }
+}

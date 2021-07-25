@@ -1,0 +1,10 @@
+<div class="github-page">
+    <div class="github-wrapper">
+        <div class="github-title">
+            <span>Public GitHub Repos</span>
+        </div>
+        <mat-card (click)="navToRepo(r.url)" class="github-repos" *ngFor="let r of repos">
+            <mat-card-title>{{r.name}}</mat-card-title>
+        </mat-card>
+    </div>
+</div>

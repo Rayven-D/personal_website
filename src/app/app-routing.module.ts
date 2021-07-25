@@ -6,6 +6,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { LinksComponent } from './pages/links/links.component';
 import { ApiProjectsComponent } from './pages/api-projects/api-projects.component';
+import { GithubReposComponent } from './pages/github-repos/github-repos.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/home', pathMatch: 'full'},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'projects', component:ProjectsComponent},
   {path:'resume', component: ResumeComponent},
   {path:'links', component:LinksComponent},
-  {path:'api-projects', component: ApiProjectsComponent}
+  {path:'api-projects', component: ApiProjectsComponent},
+  {path:'github-repos', component: GithubReposComponent}
 ];
 export const appRouting = RouterModule.forRoot(routes);
 @NgModule({

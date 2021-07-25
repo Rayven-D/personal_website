@@ -5,12 +5,14 @@ export const getRepos = functions.https.onRequest( (req, res)  => {
 
     var options = {
         host: 'api.github.com',
-        path: '/users/Rayven-D/repos',
+        path: '/users/Rayven-D/repos?sort=updated&direction=desc',
         method: 'GET',
         headers: {
             'user-agent': 'node.js'
         }
     }
+
+    res.set('Access-Control-Allow-Origin', '*');
 
     https.get(options, (resp) => {
         let data ='';
