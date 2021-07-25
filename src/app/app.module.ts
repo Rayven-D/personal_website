@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ApiProjectsComponent } from './pages/api-projects/api-projects.component';
 import { GithubReposComponent } from './pages/github-repos/github-repos.component';
+import { LoadingComponent } from './common/loading/loading.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { GithubReposComponent } from './pages/github-repos/github-repos.componen
     HealthcareComponent,
     ApiProjectsComponent,
     GithubReposComponent,
+    LoadingComponent,
 
   ],
   imports: [

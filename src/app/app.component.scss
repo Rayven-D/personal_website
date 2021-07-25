@@ -76,13 +76,23 @@
         color: white;
     }
 }
-
-#signature {
-    stroke-dasharray: 832;
-    stroke-dashoffset: 832;
-    animation: sign 3s ease-out;
-    animation-fill-mode: forwards;
-    
+.name{
+    padding-left:20px;
+    padding-top:5px;
+    #tool-first-name {
+        stroke-dasharray: 1231;
+        stroke-dashoffset: 1231;
+        animation: sign 3s ease-out;
+        animation-fill-mode: forwards;
+        
+    }
+    #tool-second-name {
+        stroke-dasharray: 545;
+        stroke-dashoffset: 545;
+        animation: sign 1.5s 3s ease-out;
+        animation-fill-mode: forwards;
+        
+    }
 }
 
 @keyframes sign {
