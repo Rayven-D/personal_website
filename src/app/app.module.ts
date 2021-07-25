@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ApiProjectsComponent } from './pages/api-projects/api-projects.component';
+import { GithubReposComponent } from './pages/github-repos/github-repos.component';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { ApiProjectsComponent } from './pages/api-projects/api-projects.componen
     CellSimulationComponent,
     DiceGameComponent,
     HealthcareComponent,
-    ApiProjectsComponent
+    ApiProjectsComponent,
+    GithubReposComponent,
+
   ],
   imports: [
     BrowserModule,

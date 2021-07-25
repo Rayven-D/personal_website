@@ -25,18 +25,23 @@ export class AppComponent {
         index: 1
       },
       {
+        label: 'Github Repos',
+        link: './github-repos',
+        index: 2
+      }, 
+      {
         label: 'API Projects',
         link: './api-projects',
-        index: 2
+        index: 3
       }, 
       {
         label: 'Resume',
         link: './resume',
-        index: 3
+        index: 4
       }, {
         label: 'Links',
         link: './links',
-        index: 4
+        index: 5
       }
     ]
   }

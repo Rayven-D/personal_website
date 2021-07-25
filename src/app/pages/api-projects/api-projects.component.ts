@@ -15,11 +15,11 @@ export class ApiProjectsComponent implements OnInit {
   public finishedWeather: boolean = false;
   constructor() { }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.getLocalWeather();
   }
 
-  public getLocalWeather(){
+  public async getLocalWeather(){
     navigator.geolocation.getCurrentPosition( (pos) => {
       fetch( GlobalVars.WEATHER_URL_BASE + "getTemp" + `?lat=${pos.coords.latitude}&long=${pos.coords.longitude}`).then( (response) =>{
         response.json().then( data => {
@@ -32,7 +32,7 @@ export class ApiProjectsComponent implements OnInit {
       })
     }, (error) => { 
       console.log("Failed to get location"); 
-      this.weatherTemp = "Can't get location. Did you reject location?";
+      this.weatherCity = "Can't get location";
     })  
   }
 
