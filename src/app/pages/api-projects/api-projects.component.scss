@@ -72,6 +72,17 @@
             }
         }
     }
+
+    .loading-animation-card{
+        mat-card-content{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding-top:10%;
+            filter: brightness(0) invert(1);
+        }
+
+    }
 }
 
 :host-context(.mobile){
@@ -156,4 +167,19 @@
             }
         }
     }
+
+    .loading-animation-card{
+        mat-card-content{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding-top:10%;
+            filter: brightness(0) invert(1);
+        }
+
+    }
+}
+
+.loading{
+    filter: brightness(0) invert(1);
 }
