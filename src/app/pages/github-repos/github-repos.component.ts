@@ -1,3 +1,4 @@
+import { AfterViewInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { GlobalVars } from 'src/app/common/global-vars';
 import { GithubRepos } from 'src/assets/data/github/github-repos';
@@ -7,13 +8,15 @@ import { GithubRepos } from 'src/assets/data/github/github-repos';
   templateUrl: './github-repos.component.html',
   styleUrls: ['./github-repos.component.scss']
 })
-export class GithubReposComponent implements OnInit {
+export class GithubReposComponent implements AfterViewInit {
 
   public repos: GithubRepos[] = [];
+  public reposLoaded: boolean = false;
+  public errorEncounterd: boolean = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.getMyRepos();
   }
 
@@ -27,8 +30,13 @@ export class GithubReposComponent implements OnInit {
             url: info.html_url,
           })
         })
-      })
-    }).catch( (error) => console.log("Failed to fetch repos:", error))
+      }).then( () => {
+          this.reposLoaded = true;
+        }, () => {
+          this.reposLoaded = true;
+          this.errorEncounterd = true;
+      }).catch( (error) => this.errorEncounterd = true)
+    }).catch( (error) => {console.log("Failed to fetch repos:", error); this.errorEncounterd = true;})
   }
 
   public navToRepo(url:string){

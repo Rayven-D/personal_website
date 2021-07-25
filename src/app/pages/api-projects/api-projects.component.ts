@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalVars } from 'src/app/common/global-vars';
+import { Weather } from 'src/assets/data/api-classes/weather';
 
 @Component({
   selector: 'app-api-projects',
@@ -8,32 +9,33 @@ import { GlobalVars } from 'src/app/common/global-vars';
 })
 export class ApiProjectsComponent implements OnInit {
 
-  public weatherTemp: number | string = "";
-  public weatherCity: string = "Loading...";
-  public weatherType: string = "";
-  public weatherIcon: string ="http://openweathermap.org/img/wn/"
-  public finishedWeather: boolean = false;
+  public weather: Weather = { temp: -999, city: "", type: "", icon: "http://openweathermap.org/img/wn/" };
+  public loadedWeather: boolean = false;
+  public errorWeather: boolean = false;
   constructor() { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.getLocalWeather();
+
   }
 
-  public async getLocalWeather(){
+  public async getLocalWeather(): Promise<void>{
     navigator.geolocation.getCurrentPosition( (pos) => {
       fetch( GlobalVars.WEATHER_URL_BASE + "getTemp" + `?lat=${pos.coords.latitude}&long=${pos.coords.longitude}`).then( (response) =>{
         response.json().then( data => {
-          this.weatherCity = data.name;
-          this.weatherType = data.weather[0].description
-          this.weatherType = this.weatherType.split(" ").map( (val) => val.charAt(0).toUpperCase() + val.substring(1)).join(" ");
-          this.weatherIcon += data.weather[0].icon + ".png";
-          this.weatherTemp = Math.round(data.main.temp);
+          this.weather.city = data.name;
+          this.weather.type = data.weather[0].description.split(" ").map( (val:any) => val.charAt(0).toUpperCase() + val.substring(1)).join(" ");
+          this.weather.icon += data.weather[0].icon + ".png";
+          this.weather.temp = Math.round(data.main.temp);
         })
-      })
+      }).then(() => {this.loadedWeather = true;},
+          () => {
+            this.loadedWeather = true;
+            this.errorWeather = true;
+          })
     }, (error) => { 
       console.log("Failed to get location"); 
-      this.weatherCity = "Can't get location";
-    })  
+    });
   }
 
 }

@@ -1,0 +1,72 @@
+.loading-component{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+
+    .spinning-letter{
+        display: block;
+        font-weight: 900;
+        
+        #loading-first-name {
+            stroke: black;
+            stroke-dasharray: 1231;
+            stroke-dashoffset: 1231;
+            animation: writing-first 4s ease infinite;    
+            stroke-width: 5px;        
+        }
+
+        #loading-second-name{
+            stroke: black;
+            stroke-dasharray: 545;
+            stroke-dashoffset: 545;
+            animation: writing-second 4s ease infinite;    
+            stroke-width:4px;
+        }
+    }
+
+    .loading-text{
+        display: block;
+        font-size:30px;
+        font-weight: 500;
+    }
+    .loading-text::after{
+        content: "";
+        animation: dots 4s infinite;
+    }
+}
+
+@keyframes writing-first {
+    50%{
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes writing-second{
+    50%{
+        stroke-dashoffset:545 ;
+    }
+    85%{
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dots{
+    25%{
+        content: ".";
+    }
+    50%{
+        content: "..";
+    }
+    75%{
+        content: "...";
+    }
+
+}
