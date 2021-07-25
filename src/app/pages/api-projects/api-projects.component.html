@@ -4,23 +4,26 @@
             <span class="title">API Projects</span>
         </div>
         <mat-card class="weather-card api-card" *ngIf="loadedWeather else loading">
-            <mat-card-title>
-                <span class="weather-city">{{weatherCity}}</span>
+            <mat-card-title *ngIf="!errorWeather">
+                <span class="weather-city">{{weather.city}}</span>
             </mat-card-title>
-            <mat-card-content>
-                <span class="weather-temp">{{weatherTemp}}<sup *ngIf="weatherTemp != ''">°F</sup></span>
-                <img height="75px" width="75px" *ngIf="weatherTemp != ''" src="{{weatherIcon}}"/>
+            <mat-card-title *ngIf="errorWeather">
+                <span class="weather-city">Failed getting weather</span>
+            </mat-card-title>
+            <mat-card-content *ngIf="!errorWeather">
+                <span class="weather-temp">{{weather.temp}}<sup>°F</sup></span>
+                <img height="75px" width="75px" src="{{weather.icon}}"/>
             </mat-card-content>
-            <mat-card-footer>
-                <span class="weather-type">{{weatherType}}</span>
+            <mat-card-footer *ngIf="!errorWeather">
+                <span class="weather-type">{{weather.type}}</span>
             </mat-card-footer>
         </mat-card>
     </div>
 </div>
 
 <ng-template #loading>
-    <mat-card class="weather-card loading api-card">
-        <mat-card-content>
+    <mat-card class="weather-card api-card">
+        <mat-card-content class="loading">
             <app-loading [color]="'#FFF'"></app-loading>
         </mat-card-content>
     </mat-card>

@@ -35,7 +35,8 @@
             margin: 0;
             display:flex;
             .weather-city{
-                font-size: 30px
+                font-size: 30px;
+                line-height: 30px;
             }
         }
 
@@ -71,11 +72,6 @@
             }
         }
     }
-
-    .loading{
-        color: #000
-    }
-
 }
 
 :host-context(.mobile){
@@ -113,11 +109,13 @@
     }
 
     .weather-card{
+        height:100%;
         mat-card-title{
             margin: 0;
             display:flex;
             .weather-city{
-                font-size: 30px
+                font-size: 25px;
+                line-height: 25px;
             }
         }
 
@@ -144,6 +142,11 @@
                 align-self: center;
             }
         }
+
+        mat-card-content.loading{
+            padding-top:20px;
+        }
+
         mat-card-footer{
             text-align: center;
             .weather-type{

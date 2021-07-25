@@ -17,12 +17,7 @@ export class GithubReposComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
-    this.getMyRepos().then( () => {
-      this.reposLoaded = true;
-    }, () => {
-      this.reposLoaded = true;
-      this.errorEncounterd = true;
-    });
+    this.getMyRepos();
   }
 
   
@@ -35,6 +30,11 @@ export class GithubReposComponent implements AfterViewInit {
             url: info.html_url,
           })
         })
+      }).then( () => {
+          this.reposLoaded = true;
+        }, () => {
+          this.reposLoaded = true;
+          this.errorEncounterd = true;
       }).catch( (error) => this.errorEncounterd = true)
     }).catch( (error) => {console.log("Failed to fetch repos:", error); this.errorEncounterd = true;})
   }
