@@ -35,6 +35,8 @@ export class ApiProjectsComponent implements OnInit {
           })
     }, (error) => { 
       console.log("Failed to get location"); 
+      this.loadedWeather = true;
+      this.errorWeather = true;
     });
   }
 
