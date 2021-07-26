@@ -30,18 +30,29 @@ export class GithubReposComponent implements AfterViewInit {
             url: info.html_url,
           })
         })
-      }).then( () => {
-          this.reposLoaded = true;
-        }, () => {
-          this.reposLoaded = true;
-          this.errorEncounterd = true;
-      }).catch( (error) => this.errorEncounterd = true)
+      }).catch((error) => {console.log("Failed to fetch repos:", error); this.errorEncounterd = true;})
+    }).then( () => {
+      this.reposLoaded = true;
+      this.fadeInCards();
+    }, () => {
+      this.reposLoaded = true;
+      this.errorEncounterd = true;
     }).catch( (error) => {console.log("Failed to fetch repos:", error); this.errorEncounterd = true;})
   }
 
   public navToRepo(url:string){
     console.log(url)
     window.open(url, "_blank")
+  }
+
+  private fadeInCards(){
+    setTimeout( () =>{
+      
+      const repoCards = document.getElementsByClassName('github-repos');  
+      for(let i = 0; i < repoCards.length; i++){
+        repoCards[i].setAttribute('style', `animation: fade-in 2s ${i * .2}s forwards;`)
+      }
+    },200) 
   }
 
 }

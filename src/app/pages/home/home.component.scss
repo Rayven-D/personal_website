@@ -63,7 +63,7 @@
         padding-bottom: 40px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 20px;
         width: 80%;
         margin: 0 auto;
     
@@ -247,5 +247,20 @@
                 }
             }
         }
+    }
+}
+
+.language-card{
+    opacity: 0;
+}
+:host-context(.desktop){
+    .language-card{
+        transform: translateY(-8%);
+
+    }
+}
+:host-context(.mobile){
+    .language-card{
+        transform: translateX(-20%);
     }
 }

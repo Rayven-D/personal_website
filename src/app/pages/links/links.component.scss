@@ -75,7 +75,7 @@
         width: 80%;
         padding-top: 80px;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
+        grid-gap: 10px;
     
         .links-header{
     
@@ -109,5 +109,21 @@
                 }
             }
         }
+    }
+}
+
+.link-card{
+    opacity: 0;
+}
+
+:host-context(.desktop){
+    .link-card{
+        transform: translateY(-10%);
+
+    }
+}
+:host-context(.mobile){
+    .link-card{
+        transform: translateX(-20%);
     }
 }

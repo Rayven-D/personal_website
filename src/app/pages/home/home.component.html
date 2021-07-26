@@ -3,7 +3,7 @@
         <div class="home-information-welcome">
             <span>Hello! I'm Rayven!</span>
         </div>
-        <div class="home-information-text">
+        <div class="home-information-text not-title">
             <span>
                 Here's a little about me: <br/>
                 I am currently enrolled in Texas Tech University as a Junior in Computer Science.
@@ -12,11 +12,11 @@
                  lives of all, and create various open source software for all to use.
             </span>
         </div>
-        <div class="home-information-picture">
+        <div class="home-information-picture not-title">
             <img src="assets/img/home/picture1.jpg"/>
         </div>
     </div>
-    <div class="programming-languages">
+    <div class="programming-languages not-title">
         <div class="languages-top">
             <span class="languages-title">Languages</span>
             <span class="toggle-all-values" *ngIf="!isMobile">
@@ -24,7 +24,7 @@
             </span>
 
         </div>
-        <mat-card *ngFor="let lang of languages" (mouseenter)="languageInFocus = lang" (mouseleave)="languageInFocus = null">
+        <mat-card class="language-card"*ngFor="let lang of languages" (mouseenter)="languageInFocus = lang" (mouseleave)="languageInFocus = null">
             <mat-card-title>{{lang.name}}</mat-card-title>
             <mat-card-content>
                 <img src={{lang.source}} />

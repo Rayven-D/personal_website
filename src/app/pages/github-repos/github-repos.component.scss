@@ -87,3 +87,18 @@
         }
     }
 }
+
+.github-repos{
+    opacity: 0;
+}
+:host-context(.desktop){
+    .github-repos{
+        transform: translateY(-15%);
+
+    }
+}
+:host-context(.mobile){
+    .github-repos{
+        transform: translateX(-10%);
+    }
+}
