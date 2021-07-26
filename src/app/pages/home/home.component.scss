@@ -253,7 +253,9 @@
 @for $i from 1 through 10{
     .language-card:nth-child(#{$i}){
         opacity: 0;
-        animation: fade-in 2s calc(#{$i} * .1s) forwards;
+        animation: fade-in  forwards;
+        animation-duration: 1s;
+        animation-delay: calc(#{$i} * .1s);
     }
 }
 

@@ -91,7 +91,9 @@
 @for $i from 1 through 10{
     .github-repos:nth-child(#{$i}){
         opacity: 0;
-        animation: fade-in 2s calc(#{$i} * .1s) forwards;
+        animation: fade-in  forwards;
+        animation-duration: 1s;
+        animation-delay: calc(#{$i} * .1s);
     }
 }
 
