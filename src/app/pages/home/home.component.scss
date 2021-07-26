@@ -62,7 +62,7 @@
         padding-top:40px;
         padding-bottom: 40px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minMax(275px, 1fr));
         gap: 20px;
         width: 80%;
         margin: 0 auto;
