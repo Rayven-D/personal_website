@@ -3,7 +3,7 @@
         <div class="links-header">
             <span>Links</span>
         </div>
-        <mat-card *ngFor="let s of socials" (click)="goToLink(s)">
+        <mat-card class="link-card" *ngFor="let s of socials" (click)="goToLink(s)">
             <mat-card-title>{{s.name}}</mat-card-title>
             <mat-card-content>
                 <img src={{s.source}}>
