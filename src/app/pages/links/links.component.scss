@@ -29,8 +29,8 @@
     
         mat-card{
             cursor: pointer;
-            background-color: var(--primary-color);
             color:white;
+            background-color: var(--primary-color);
             height: 150px;
             mat-card-content{
                 height: 80%;
@@ -112,10 +112,12 @@
     }
 }
 
-.link-card{
-    opacity: 0;
+@for $i from 1 through 8{
+    .link-card:nth-child(#{$i}){
+        opacity: 0;
+        animation: fade-in 1s calc(#{$i} * .1s) forwards;
+    }
 }
-
 :host-context(.desktop){
     .link-card{
         transform: translateY(-10%);

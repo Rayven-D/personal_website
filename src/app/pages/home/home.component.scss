@@ -250,9 +250,13 @@
     }
 }
 
-.language-card{
-    opacity: 0;
+@for $i from 1 through 10{
+    .language-card:nth-child(#{$i}){
+        opacity: 0;
+        animation: fade-in 1s calc(#{$i} * .1s) forwards;
+    }
 }
+
 :host-context(.desktop){
     .language-card{
         transform: translateY(-8%);

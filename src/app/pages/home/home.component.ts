@@ -8,7 +8,7 @@ import { GlobalVars } from '../../common/global-vars';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
   public test: number = 0;
   public languages: ProgLanguages[] = [];
   public languageInFocus: ProgLanguages | null = null;
@@ -25,13 +25,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getLanguages();
-  }
-
-  ngAfterViewInit() {
-      const langCards = document.getElementsByClassName('language-card');  
-      for(let i = 0; i < langCards.length; i++){
-        langCards[i].setAttribute('style', `animation: fade-in 2s ${i * .2}s forwards;`)
-      }
   }
 
   onClick() {
