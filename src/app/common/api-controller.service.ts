@@ -9,8 +9,8 @@ export class ApiControllerService {
 
   constructor(private http: HttpClient) { }
 
-  getTemp(lat: string, long: string){
-    return this.http.post(GlobalVars.WEATHER_URL_BASE + "getTemp", {})
+  getTemp(latitude: number, longitude: number){
+    return this.http.post(GlobalVars.WEATHER_URL_BASE + "getTemp", {lat: latitude, long: longitude});
   }
 
 }

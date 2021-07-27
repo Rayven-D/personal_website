@@ -8,8 +8,8 @@ const openweather = new OpenWeatherMap({
 });
 
 export const getTemp = functions.https.onRequest((req, res) => {
-    let lat:number = +(req.query.lat ?? "0" );
-    let long:number = +(req.query.long ?? "0");
+    let lat:number = req.body.lat;
+    let long:number = req.body.long;
 
     res.set('Access-Control-Allow-Origin', '*');
 

@@ -1,0 +1,15 @@
+[debug] [2021-07-27T12:05:57.714Z] ----------------------------------------------------------------------
+[debug] [2021-07-27T12:05:57.715Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rayven\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions:weather-getTemp
+[debug] [2021-07-27T12:05:57.716Z] CLI Version:   9.16.0
+[debug] [2021-07-27T12:05:57.716Z] Platform:      win32
+[debug] [2021-07-27T12:05:57.716Z] Node Version:  v14.15.3
+[debug] [2021-07-27T12:05:57.716Z] Time:          Tue Jul 27 2021 07:05:57 GMT-0500 (Central Daylight Time)
+[debug] [2021-07-27T12:05:57.717Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-27T12:05:57.718Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-07-27T12:05:57.781Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-27T12:05:57.781Z] > authorizing via signed-in user (rjderay@gmail.com)
+[debug] [2021-07-27T12:05:57.781Z] [iam] checking project rayvenderaywebsite for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2021-07-27T12:05:57.782Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-07-27T12:05:57.783Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
