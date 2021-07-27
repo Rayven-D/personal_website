@@ -62,7 +62,7 @@
         padding-top:40px;
         padding-bottom: 40px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minMax(275px, 1fr));
         gap: 20px;
         width: 80%;
         margin: 0 auto;
@@ -250,9 +250,15 @@
     }
 }
 
-.language-card{
-    opacity: 0;
+@for $i from 1 through 10{
+    .language-card:nth-child(#{$i}){
+        opacity: 0;
+        animation: fade-in  forwards;
+        animation-duration: 1s;
+        animation-delay: calc(#{$i} * .1s);
+    }
 }
+
 :host-context(.desktop){
     .language-card{
         transform: translateY(-8%);

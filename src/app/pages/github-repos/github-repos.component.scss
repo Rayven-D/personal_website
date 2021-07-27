@@ -11,7 +11,7 @@
         width: 80%;
         padding-top: 60px;
         display:grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minMax(250px, 1fr));
         gap: 10px;
 
         .github-title{
@@ -88,9 +88,15 @@
     }
 }
 
-.github-repos{
-    opacity: 0;
+@for $i from 1 through 10{
+    .github-repos:nth-child(#{$i}){
+        opacity: 0;
+        animation: fade-in  forwards;
+        animation-duration: 1s;
+        animation-delay: calc(#{$i} * .1s);
+    }
 }
+
 :host-context(.desktop){
     .github-repos{
         transform: translateY(-15%);

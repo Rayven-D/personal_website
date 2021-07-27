@@ -12,7 +12,7 @@
         width: 75%;
         margin: 0 auto;
         padding-top: 60px;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minMax(200px, 1fr));
         grid-gap: 20px;
     
         .links-header{
@@ -29,8 +29,8 @@
     
         mat-card{
             cursor: pointer;
-            background-color: var(--primary-color);
             color:white;
+            background-color: var(--primary-color);
             height: 150px;
             mat-card-content{
                 height: 80%;
@@ -112,10 +112,14 @@
     }
 }
 
-.link-card{
-    opacity: 0;
+@for $i from 1 through 8{
+    .link-card:nth-child(#{$i}){
+        opacity: 0;
+        animation: fade-in  forwards;
+        animation-duration: 1s;
+        animation-delay: calc(#{$i} * .1s);
+    }
 }
-
 :host-context(.desktop){
     .link-card{
         transform: translateY(-10%);
