@@ -1,7 +1,8 @@
-import { AfterViewInit } from '@angular/core';
-import { AfterContentInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Socials } from 'src/assets/data/social-links/socials.Socials';
 import { LinksService } from './links.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MailingComponent } from './mailing/mailing.component';
 
 @Component({
   selector: 'app-links',
@@ -11,9 +12,11 @@ import { LinksService } from './links.service';
 export class LinksComponent implements OnInit {
 
     public socials: Socials[] = [];
+    public mailingOpen: boolean = false;
 
   constructor(
-    private _linksService: LinksService
+    private _linksService: LinksService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +25,14 @@ export class LinksComponent implements OnInit {
 
   goToLink(social: Socials): void {
     window.open(social.links);
+  }
+
+  public openEmailDialog(){
+    const dialogRef = this.dialog.open(MailingComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

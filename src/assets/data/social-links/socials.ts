@@ -7,5 +7,4 @@ export const SOCIALS: Socials[] = [
     { name: "Instagram", source:"assets/img/links/instagram_logo.svg", links: "https://www.instagram.com/rayvenderay/"},
     { name: "Twitter", source:"assets/img/links/twitter_logo.svg", links: "https://twitter.com/whatasiandude"},
     { name: "Facebook", source:"assets/img/links/facebook_logo.svg", links: "https://www.facebook.com/rj.deray/"},
-    { name: "Email", source:"assets/img/links/email_logo.svg", links: "mailto:rjderay@gmail.com"}
 ]
