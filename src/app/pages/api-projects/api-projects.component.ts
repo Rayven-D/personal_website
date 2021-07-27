@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiControllerService } from 'src/app/common/api-controller.service';
 import { GlobalVars } from 'src/app/common/global-vars';
 import { Weather } from 'src/assets/data/api-classes/weather';
 
 @Component({
   selector: 'app-api-projects',
   templateUrl: './api-projects.component.html',
-  styleUrls: ['./api-projects.component.scss']
+  styleUrls: ['./api-projects.component.scss'],
+  providers:[
+    ApiControllerService
+  ]
 })
 export class ApiProjectsComponent implements OnInit {
 
