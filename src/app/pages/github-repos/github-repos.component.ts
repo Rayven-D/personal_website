@@ -1,5 +1,6 @@
 import { AfterViewInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { ApiControllerService } from 'src/app/common/api-controller.service';
 import { GlobalVars } from 'src/app/common/global-vars';
 import { GithubRepos } from 'src/assets/data/github/github-repos';
 
@@ -14,7 +15,9 @@ export class GithubReposComponent implements AfterViewInit {
   public reposLoaded: boolean = false;
   public errorEncounterd: boolean = false;
 
-  constructor() { }
+  constructor(
+    private _apiService: ApiControllerService
+  ) { }
 
   ngAfterViewInit(): void {
     this.getMyRepos();
@@ -22,21 +25,20 @@ export class GithubReposComponent implements AfterViewInit {
 
   
   public async getMyRepos(){
-    fetch( GlobalVars.GITHUB_URL_BASE + "getRepos").then( (response) => {
-      response.json().then( (data) => {
-        data.forEach((info: any) => {
-          this.repos.push({
-            name: info.name.split(/[\s-_]/).map((word:any) => word.charAt(0).toUpperCase() + word.substring(1)).join(" "),
-            url: info.html_url,
-          })
-        })
-      }).catch((error) => {console.log("Failed to fetch repos:", error); this.errorEncounterd = true;})
-    }).then( () => {
-      this.reposLoaded = true;
-    }, () => {
-      this.reposLoaded = true;
-      this.errorEncounterd = true;
-    }).catch( (error) => {console.log("Failed to fetch repos:", error); this.errorEncounterd = true;})
+    this._apiService.getGithubRepos()
+      .then( (data:any) => {
+          data.forEach((info: any) => {
+            this.repos.push({
+              name: info.name.split(/[\s-_]/).map((word:any) => word.charAt(0).toUpperCase() + word.substring(1)).join(" "),
+              url: info.html_url,
+            });
+          });
+          this.reposLoaded = true;
+      })
+      .catch( () => {
+        this.errorEncounterd = true;
+        this.reposLoaded = true;
+      })
   }
 
   public navToRepo(url:string){

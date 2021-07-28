@@ -55,6 +55,13 @@
             }
         }
     }
+
+    app-mailing{
+        position:fixed;
+        z-index: 10;
+        inset: 25vw;
+    }
+
 }
 
 :host-context(.mobile){

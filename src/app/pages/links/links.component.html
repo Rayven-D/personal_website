@@ -3,6 +3,12 @@
         <div class="links-header">
             <span>Links</span>
         </div>
+        <mat-card class="link-card" (click)="openEmailDialog()">
+            <mat-card-title>Email me</mat-card-title>
+            <mat-card-content>
+                <img src="assets/img/links/email_logo.svg">
+            </mat-card-content>
+        </mat-card>
         <mat-card class="link-card" *ngFor="let s of socials" (click)="goToLink(s)">
             <mat-card-title>{{s.name}}</mat-card-title>
             <mat-card-content>
@@ -10,6 +16,7 @@
             </mat-card-content>
         </mat-card>
     </div>
-    
 </div>
+
+<app-mailing *ngIf="mailingOpen"></app-mailing>
 

@@ -23,6 +23,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ApiProjectsComponent } from './pages/api-projects/api-projects.component';
 import { GithubReposComponent } from './pages/github-repos/github-repos.component';
 import { LoadingComponent } from './common/loading/loading.component';
+import { MailingComponent } from './pages/links/mailing/mailing.component';
+import { MatDialogModule } from '@angular/material/dialog'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,7 +41,7 @@ import { LoadingComponent } from './common/loading/loading.component';
     ApiProjectsComponent,
     GithubReposComponent,
     LoadingComponent,
-
+    MailingComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,9 @@ import { LoadingComponent } from './common/loading/loading.component';
     MatExpansionModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
