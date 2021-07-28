@@ -24,8 +24,9 @@ import { ApiProjectsComponent } from './pages/api-projects/api-projects.componen
 import { GithubReposComponent } from './pages/github-repos/github-repos.component';
 import { LoadingComponent } from './common/loading/loading.component';
 import { MailingComponent } from './pages/links/mailing/mailing.component';
-import { MatDialogModule } from '@angular/material/dialog'
-import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input'
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatMenuModule,
     MatDialogModule,
-    HttpClientModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
