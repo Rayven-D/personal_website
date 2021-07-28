@@ -25,6 +25,7 @@ import { GithubReposComponent } from './pages/github-repos/github-repos.componen
 import { LoadingComponent } from './common/loading/loading.component';
 import { MailingComponent } from './pages/links/mailing/mailing.component';
 import { MatDialogModule } from '@angular/material/dialog'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { MatDialogModule } from '@angular/material/dialog'
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
