@@ -28,7 +28,9 @@ export class LinksComponent implements OnInit {
   }
 
   public openEmailDialog(){
-    const dialogRef = this.dialog.open(MailingComponent);
+    const dialogRef = this.dialog.open(MailingComponent, {
+      maxWidth: "none",
+    });
   }
 
 }

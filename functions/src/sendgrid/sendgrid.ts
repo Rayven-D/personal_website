@@ -10,21 +10,18 @@ export const sendMail = functions.https.onRequest( (req, res) => {
     cors(req, res, () => {
         const message = {
             to: "rjderay@gmail.com",
-            from: "test@example.com",
-            subject: "Test",
-            text: "Testing sending emails"
+            from: "rjderaywebsite@gmail.com",
+            subject: req.body.subject,
+            text: req.body.content
         }
         sgMail.send(message)
             .then(
-                () =>{
-                    res.sendStatus(200);
+                (data) =>{
+                    res.sendStatus(200)
                 }
-            )
-            .catch(
-                () =>{
-                    res.sendStatus(500)
-                }
-            )
+            ).catch( (error) =>{
+                res.sendStatus(500)
+            })
         
     })
 })

@@ -12,6 +12,14 @@
               Email is <strong>required</strong>
             </mat-error>
           </mat-form-field>
+          <mat-form-field class="email-subject" appearance="fill">
+            <mat-label>Subject</mat-label>
+            <input id="email-subject-area" type="text" matInput [formControl]="subjectFormControl"
+                   placeholder="Your subject line here">
+            <mat-error *ngIf="subjectFormControl.hasError('required')">
+              Subject field is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
           <mat-form-field class="email-body" appearance="fill">
               <mat-label>Content</mat-label>
               <textarea matInput id="email-text-area" [formControl]="bodyFormControl" ></textarea>

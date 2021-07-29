@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiControllerService } from 'src/app/common/api-controller.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -25,22 +27,43 @@ export class MailingComponent implements OnInit {
     Validators.required,
   ])
 
+  public subjectFormControl = new FormControl('', [
+    Validators.required,
+  ])
+
   public matcher = new MyErrorStateMatcher();
 
-  public get formsFilled(): boolean{
-    return this.emailFormControl.hasError('email') || this.emailFormControl.hasError('required') || this.bodyFormControl.hasError('required');
+  public get formsFilled(): boolean {
+    return this.emailFormControl.hasError('email') || this.emailFormControl.hasError('required') || this.bodyFormControl.hasError('required') || this.subjectFormControl.hasError('required');
   }
 
-  constructor() { }
+  constructor(
+    private _apiService: ApiControllerService,
+    private _snackBar: MatSnackBar,
+  ) { }
 
   ngOnInit(): void {
   }
 
   public getContent(): void {
-    const email = (<HTMLInputElement>document.getElementById("email-address-area"))?.value;
-    console.log(email);
-    const body = (<HTMLTextAreaElement>document.getElementById('email-text-area')).value;
-    console.log(body);
+    let body = (<HTMLInputElement>document.getElementById("email-address-area"))?.value.trim() + "\n-\n";
+    body += (<HTMLTextAreaElement>document.getElementById('email-text-area'))?.value.trim();
+    const subj = (<HTMLInputElement>document.getElementById('email-subject-area'))?.value.trim();
+    
+    console.log(subj, body);
+    this._apiService.sendEmail(subj, body).then( (data:any) =>{
+      console.log(data)
+      if(data === 'OK' ){
+        this._snackBar.open("Sent message sucessfully", 'Dismiss', {
+          duration: 5000,
+        })
+      }else{
+        this._snackBar.open("Failed to send message", 'Dismiss', {
+          duration: 5000,
+        })
+      }
+    });
+    this._snackBar.open("Sending message...", "Dismiss");
   }
 
 }
