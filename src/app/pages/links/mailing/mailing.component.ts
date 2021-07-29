@@ -45,23 +45,22 @@ export class MailingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public getContent(): void {
+  public async getContent() {
     let body = (<HTMLInputElement>document.getElementById("email-address-area"))?.value.trim() + "\n-\n";
     body += (<HTMLTextAreaElement>document.getElementById('email-text-area'))?.value.trim();
     const subj = (<HTMLInputElement>document.getElementById('email-subject-area'))?.value.trim();
     
-    this._apiService.sendEmail(subj, body).then( (data:any) =>{
-      if(data === 'OK' ){
-        this._snackBar.open("Sent message sucessfully", 'Dismiss', {
-          duration: 5000,
-        })
-      }else{
-        this._snackBar.open("Failed to send message", 'Dismiss', {
-          duration: 5000,
-        })
-      }
-    });
     this._snackBar.open("Sending message...", "Dismiss");
+    const mail = await this._apiService.sendEmail(subj, body)
+    if(mail === 'OK' ){
+      this._snackBar.open("Sent message sucessfully", 'Dismiss', {
+        duration: 5000,
+      })
+    }else{
+      this._snackBar.open("Failed to send message", 'Dismiss', {
+        duration: 5000,
+      })
+    }
   }
 
 }

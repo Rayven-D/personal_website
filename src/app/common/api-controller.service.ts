@@ -19,7 +19,7 @@ export class ApiControllerService {
     return post.toPromise();
   }
 
-  sendEmail(subject: string, content: string){
+  sendEmail(subject: string, content: string): Promise<string>{
     const send = this.http.post(GlobalVars.SG_URL_BASE + "sendMail", {subject: subject, content: content}, {responseType: 'text'});
     return send.toPromise();
   }
