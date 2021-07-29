@@ -13,6 +13,11 @@ export class AppComponent {
   navLinks: any[];
   activeLinkIndex = -1;
   isMobile = GlobalVars.isMobile;
+
+  public get smallWidth(): boolean{
+    return window.innerWidth < 850;
+  }
+
   constructor(private router: Router) {
     this.navLinks = [
       {
