@@ -25,20 +25,19 @@ export class GithubReposComponent implements AfterViewInit {
 
   
   public async getMyRepos(){
-    this._apiService.getGithubRepos()
-      .then( (data:any) => {
-          data.forEach((info: any) => {
-            this.repos.push({
-              name: info.name.split(/[\s-_]/).map((word:any) => word.charAt(0).toUpperCase() + word.substring(1)).join(" "),
-              url: info.html_url,
-            });
-          });
-          this.reposLoaded = true;
+    try{
+      const fetched = await this._apiService.getGithubRepos();
+      fetched.forEach( (elem) => {
+        this.repos.push({
+          name: elem.name.split(/[\s-_]/).map((word:any) => word.charAt(0).toUpperCase() + word.substring(1)).join(" "),
+          url: elem.html_url,
+        })
       })
-      .catch( () => {
-        this.errorEncounterd = true;
-        this.reposLoaded = true;
-      })
+      this.reposLoaded = true;
+    }catch(err){
+      this.errorEncounterd = true;
+      this.reposLoaded = true;
+    }
   }
 
   public navToRepo(url:string){

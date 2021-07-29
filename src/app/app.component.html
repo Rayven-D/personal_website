@@ -11,7 +11,7 @@
     
     
     
-    <nav mat-tab-nav-bar *ngIf="!isMobile">
+    <nav mat-tab-nav-bar *ngIf="!isMobile && !smallWidth">
       <a mat-tab-link
         *ngFor="let link of navLinks"
         [routerLink]="link.link"
@@ -22,7 +22,7 @@
         [style.padding]='0'
         [style.min-width.px]='100'>{{link.label}}</a>
     </nav>
-    <button mat-icon-button *ngIf="isMobile" [mat-menu-trigger-for]="menu" style="color:white">
+    <button mat-icon-button *ngIf="isMobile || smallWidth" [mat-menu-trigger-for]="menu" style="color:white">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
