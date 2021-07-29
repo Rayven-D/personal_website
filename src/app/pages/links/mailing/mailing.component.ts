@@ -50,9 +50,7 @@ export class MailingComponent implements OnInit {
     body += (<HTMLTextAreaElement>document.getElementById('email-text-area'))?.value.trim();
     const subj = (<HTMLInputElement>document.getElementById('email-subject-area'))?.value.trim();
     
-    console.log(subj, body);
     this._apiService.sendEmail(subj, body).then( (data:any) =>{
-      console.log(data)
       if(data === 'OK' ){
         this._snackBar.open("Sent message sucessfully", 'Dismiss', {
           duration: 5000,
