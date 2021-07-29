@@ -28,10 +28,8 @@ export class LinksComponent implements OnInit {
   }
 
   public openEmailDialog(){
-    const dialogRef = this.dialog.open(MailingComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    const dialogRef = this.dialog.open(MailingComponent, {
+      maxWidth: "none",
     });
   }
 

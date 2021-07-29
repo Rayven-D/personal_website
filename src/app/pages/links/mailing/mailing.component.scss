@@ -1,3 +1,46 @@
-.mailing-component{
-    background-color: green;
+:host-context(.desktop){
+    .mailing-component{
+        height:100%;
+        width:50vw;
+    }
+    mat-dialog-content{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+
+        .email-address{
+            width:50%;
+        }
+
+        .email-body{
+            height:100%;
+        }
+    }
+
+    textarea{
+        height:25vh;
+    }
+}
+:host-context(.mobile){
+    .mailing-component{
+        height:100%;
+        width:80vw !important;
+    }
+    mat-dialog-content{
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+
+        .email-address{
+            width:100%;
+        }
+
+        .email-body{
+            height:100%;
+        }
+    }
+
+    textarea{
+        height:25vh;
+    }
 }
