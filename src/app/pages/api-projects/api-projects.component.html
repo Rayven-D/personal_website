@@ -3,6 +3,14 @@
         <div class="page-title">
             <span class="title">Web Projects</span>
         </div>
+        <mat-card class="loading-animation-card api-card">
+            <mat-card-title class="loading"> 
+                <span class="loading-animation-title">Loading Animation</span>
+            </mat-card-title>
+            <mat-card-content>
+                <app-loading></app-loading>
+            </mat-card-content>
+        </mat-card>
         <mat-card class="weather-card api-card" *ngIf="loadedWeather else loading">
             <mat-card-title *ngIf="!errorWeather">
                 <span class="weather-city">{{weather.city}}</span>
@@ -18,12 +26,9 @@
                 <span class="weather-type">{{weather.type}}</span>
             </mat-card-footer>
         </mat-card>
-        <mat-card class="loading-animation-card api-card">
-            <mat-card-title class="loading"> 
-                <span class="loading-animation-title">Loading Animation</span>
-            </mat-card-title>
+        <mat-card class="iss-card api-card" *ngIf="loadedISS else loading">
             <mat-card-content>
-                <app-loading></app-loading>
+                <div id="map"></div>
             </mat-card-content>
         </mat-card>
     </div>

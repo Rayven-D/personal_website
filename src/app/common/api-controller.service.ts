@@ -24,4 +24,9 @@ export class ApiControllerService {
     return send.toPromise();
   }
 
+  getISSLocation(): Promise<any>{
+    const get = this.http.post<any>(GlobalVars.ISS_URL_BASE + "getISSLocation", {});
+    return get.toPromise();
+  }
+
 }
