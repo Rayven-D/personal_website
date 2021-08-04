@@ -13,6 +13,7 @@
         display:grid;
         grid-template-columns: repeat(auto-fit, minMax(300px, 1fr));
         gap: 10px;
+        padding-bottom: 20px;
 
         .page-title{
             grid-column: 1 / -1;
@@ -183,3 +184,33 @@
 .loading{
     filter: brightness(0) invert(1);
 }
+
+.iss-card{
+
+    mat-card-title{
+        display:flex;
+        justify-content: space-between;
+
+        mat-icon{
+            cursor: pointer;
+        }
+    }
+
+    mat-card-content{
+        margin:0;
+        #map{
+            height: 150px;
+            width: auto;
+        }
+    }
+
+
+    mat-card-footer{
+        display:flex;
+        justify-content: center;
+        span{
+            font-size:10px;
+        }
+    }
+}
+
