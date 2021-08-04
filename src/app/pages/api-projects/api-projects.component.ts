@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiControllerService } from 'src/app/common/api-controller.service';
 import { Weather } from 'src/assets/data/api-classes/weather';
-import { google } from 'google-maps';
+import { Loader } from '@googlemaps/js-api-loader';
+
+const loader = new Loader({
+  apiKey: "AIzaSyApyHsg5nAjrRwAv7drnS6m9bAj72cpzlA",
+  version: 'weekly',
+});
 
 @Component({
   selector: 'app-api-projects',
@@ -17,10 +22,10 @@ export class ApiProjectsComponent implements OnInit {
   public loadedWeather: boolean = false;
   public errorWeather: boolean = false;
 
-  public issLatLong: number[] = [];
+  public issLatLng: number[] = [];
   public issTimestamp: number = 0;
   public issCity: string = "";
-  public loadedISS: boolean = true;
+  public loadedISS: boolean = false;
   public errorISS: boolean = false;
 
   constructor(
@@ -54,32 +59,30 @@ export class ApiProjectsComponent implements OnInit {
     );
   }
 
-  private async getISSLocation(){
+  public async getISSLocation(){
     try{
       const iss = await this._apiService.getISSLocation();
-      this.issLatLong[0] = iss.iss_position.latitude;
-      this.issLatLong[1] = iss.iss_position.longitude;
+      this.issLatLng[0] = +iss.iss_position.latitude;
+      this.issLatLng[1] = +iss.iss_position.longitude;
       this.issTimestamp = iss.timestamp;
-      console.log(this.issLatLong);
+      console.log(this.issLatLng)
 
-
-      let map: google.maps.Map;
-      const center = { lat: this.issLatLong[0], lng: this.issLatLong[1]};
-      map = new google.maps.Map(document.getElementById("map") as HTMLElement,{
-        center: center,
-        zoom: 8
-      });
-
-      const marker = new google.maps.Marker({
-        position: center,
-        map: map,
+      loader.load().then( () => {
+          let map = new google.maps.Map(document.getElementById("map") as HTMLElement,{
+          center: {lat: this.issLatLng[0], lng: this.issLatLng[1]},
+          zoom: 1
+        });
+  
+        const marker = new google.maps.Marker({
+          position: {lat: this.issLatLng[0], lng: this.issLatLng[1]},
+          map: map,
+        })
       })
 
     }catch(error){
       this.errorISS = true;
-      this.loadedISS = true;
-
     }
+    this.loadedISS = true;
   }
 
 }

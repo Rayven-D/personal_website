@@ -27,9 +27,17 @@
             </mat-card-footer>
         </mat-card>
         <mat-card class="iss-card api-card" *ngIf="loadedISS else loading">
+            <mat-card-title>
+                <span class="title">ISS Location</span> 
+                <mat-icon (click)="getISSLocation()">refresh</mat-icon>
+            </mat-card-title>
             <mat-card-content>
                 <div id="map"></div>
             </mat-card-content>
+            <mat-card-footer>
+                <span>Lat: {{issLatLng[0]}} | Lng: {{issLatLng[1]}} | Epoch Time: {{issTimestamp}}</span>
+            </mat-card-footer>
+
         </mat-card>
     </div>
 </div>
