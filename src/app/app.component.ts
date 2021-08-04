@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalVars } from './common/global-vars';
 
@@ -13,10 +13,7 @@ export class AppComponent {
   navLinks: any[];
   activeLinkIndex = -1;
   isMobile = GlobalVars.isMobile;
-
-  public get smallWidth(): boolean{
-    return window.innerWidth < 850;
-  }
+  smallWidth: boolean = window.innerWidth < 850;
 
   constructor(private router: Router) {
     this.navLinks = [
@@ -75,6 +72,11 @@ export class AppComponent {
 
   public goHome(){
     this.router.navigate(["./home"]);
+  }
+
+  @HostListener('window:resize')
+  public onResize(){
+    this.smallWidth = window.innerWidth < 850;
   }
 
 }
