@@ -18,3 +18,4 @@ jobs:
       - name: Bump Package Version
         run: |
           (npm version patch)
+          git push
