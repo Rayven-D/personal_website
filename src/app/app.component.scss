@@ -20,6 +20,11 @@
         color: white;
         cursor: pointer;
     }
+
+    .nav-button{
+        margin-right:20px;
+    }
+
     .nav-drawer{
         width: 200px;
         top:60px;
@@ -39,6 +44,7 @@
     .nav-link{
         color:white;
     }
+    
 }
 .mobile{
 
@@ -84,8 +90,16 @@
     .nav-link{
         color:white;
     }
-    
 }
+
+.version-num{
+    color:white;
+    text-align: end;
+    position:fixed;
+    right:10px;
+    font-size:10px;
+}
+
 .name{
     padding-left:20px;
     padding-top:5px;
@@ -117,4 +131,3 @@
         transform: none;
     }
 }
-
