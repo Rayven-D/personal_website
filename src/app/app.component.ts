@@ -1,6 +1,7 @@
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalVars } from './common/global-vars';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,8 @@ export class AppComponent {
   activeLinkIndex = -1;
   isMobile = GlobalVars.isMobile;
   smallWidth: boolean = window.innerWidth < 850;
+  isNavOpen: boolean = false;
+  version = environment.appVersion;
 
   constructor(private router: Router) {
     this.navLinks = [
@@ -77,6 +80,10 @@ export class AppComponent {
   @HostListener('window:resize')
   public onResize(){
     this.smallWidth = window.innerWidth < 850;
+  }
+
+  public navOpen(event: any){
+    this.isNavOpen = event;
   }
 
 }

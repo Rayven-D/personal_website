@@ -1,13 +1,12 @@
 {
   "name": "rayven-website",
-  "version": "1.0.1",
+  "version": "1.0.20",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "postinstall": "ngcc"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -24,8 +23,6 @@
     "@googlemaps/js-api-loader": "^1.12.1",
     "firebase": "^8.7.1",
     "firebase-tools": "^9.16.0",
-    "ng2-pdf-viewer": "^7.0.1",
-    "ngx-extended-pdf-viewer": "^9.0.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

@@ -29,6 +29,8 @@ import { MatInputModule } from '@angular/material/input'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
