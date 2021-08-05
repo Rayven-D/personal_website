@@ -11,4 +11,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: (npm version patch)
+      - run: |
+          git config --global user.email "rjderay@gmail.com"
+          git config --global user.name "Rayven Deray"
+      - run: |
+          (npm version patch)
