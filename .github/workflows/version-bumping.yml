@@ -1,0 +1,10 @@
+name: Bump Version on merge
+'on':
+  push:
+    branches:
+      - master
+jobs:
+  bump_version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm version patch
