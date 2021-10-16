@@ -7,16 +7,28 @@
       <path id="tool-second-name" d="M15.5 64.5C14.7866 44.5892 18.522 22.6831 32 6.86109C43.5378 -6.68325 50.4973 13.3714 50.5556 23.4444C50.7047 49.2374 37.2052 78.3621 22.1111 98.5555C18.344 103.595 13.5245 110.363 7.11112 112.333C-0.570028 114.693 1.48457 105.745 3.11112 101.667C12.0328 79.2978 31.5246 60.6596 51 47.2778C56.7555 43.3231 62.9129 40.0914 68.8889 36.5C69.4814 36.1439 77.9658 30.4857 74.9445 33.9444C68.6706 41.1263 57.3169 50.5068 56.7778 60.75C56.4631 66.7283 62.7503 62.6418 64.9722 60.8333C69.3212 57.2934 71.8613 53.0803 73.4722 47.7778C74.4822 44.4532 75.0001 39.4382 76.8889 36.5C79.5297 32.3921 75.3958 46.1522 74.6111 50.9722C72.8611 61.7223 80.0199 61.3163 86.2778 55C91.6757 49.5516 92.532 41.3547 97.25 35.6111C101.477 30.4654 98.9573 48.5005 98.8333 49.1111C98.7672 49.4371 97.5351 54.957 98.1389 54.2778C101.191 50.8444 103.031 46.1862 105.306 42.25C107.418 38.5957 109.858 33.5486 113.278 30.8889C116.029 28.7493 114.618 38.7826 114.611 39.3889C114.547 44.7259 114.717 54.4581 121.444 55.9444C127.312 57.2407 132.616 53.5119 137.5 51" stroke="white" stroke-width="3" stroke-linecap="round"/>
     </svg>   
   </div>
-  <div *ngIf="!isNavOpen else navClose">
-    <button mat-icon-button class="nav-button" (click)="drawer.toggle()"style="color:white">
-      <mat-icon>menu</mat-icon>
+  <div class="top-left-buttons">
+    <div *ngIf="darkModeOn else darkModeOff">
+      <button mat-icon-button class="dark-mode nav-button" (click)="toggleDarkMode()" style="color: white">
+        <mat-icon>dark_mode</mat-icon>
+      </button>
+    </div>
+    <ng-template #darkModeOff>
+      <button mat-icon-button class="dark-mode nav-button" (click)="toggleDarkMode()" style="color: white">
+      <mat-icon class="material-icons-outlined">dark_mode</mat-icon>
     </button>
+    </ng-template>
+    <div *ngIf="!isNavOpen else navClose">
+      <button mat-icon-button class="nav-button " (click)="drawer.toggle()"style="color:white">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <ng-template #navClose>
+      <button mat-icon-button class="nav-button" (click)="drawer.toggle()"style="color:white">
+        <mat-icon>close</mat-icon>
+      </button>
+    </ng-template>
   </div>
-  <ng-template #navClose>
-    <button mat-icon-button class="nav-button" (click)="drawer.toggle()"style="color:white">
-      <mat-icon>close</mat-icon>
-    </button>
-  </ng-template>
 </div>
 
 <mat-drawer-container class="navigation" autosize>

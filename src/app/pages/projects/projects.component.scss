@@ -6,6 +6,7 @@
         height: calc(100vh - 60px);
         max-width: 100vw;
         overflow:auto;
+        color: var(--text-color);
     }
     
     .projects-wrapper{
@@ -16,7 +17,7 @@
         padding-top: 60px;
     
         .projects-title{
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid var(--text-color);
     
             .title{
                 font-size: 35px;
@@ -34,13 +35,13 @@
                 gap: 3px;
             }
             ::ng-deep .mat-tab-label{
-                background-color:rgba(0,0,0, .1);
-                color: #3F51B5;
+                background-color:var(--primary-color);
+                color: var(--warm-color);
                 border-radius: 10px 10px 0 0;
                 opacity: 1;
             }
             ::ng-deep .mat-tab-label-active, cdk-focused, cdk-mouse-focused{
-                background-color: #3F51B5;
+                background-color: var(--warm-color);
                 color:white;
                 opacity: 1;
                 
@@ -58,6 +59,8 @@
         height: calc(100% - 60px);
         width: 100vw;
         overflow:auto;
+        color: var(--text-color);
+
     }
     
     .projects-wrapper{
@@ -68,7 +71,7 @@
         padding-top: 80px;
     
         .projects-title{
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid var(--text-color);
     
             .title{
                 font-size: 35px;
@@ -101,8 +104,8 @@
                 gap: 3px;
             }
             ::ng-deep .mat-tab-label{
-                background-color:rgba(0,0,0, .1);
-                color: #3F51B5;
+                background-color:var(--primary-color);
+                color: var(--warm-color);
                 border-radius: 10px 10px 0 0;
                 opacity: 1;
             }
@@ -113,7 +116,7 @@
                 display:none;
             }
             ::ng-deep .mat-tab-label-active, cdk-focused, cdk-mouse-focused{
-                background-color: #3F51B5;
+                background-color: var(--text-color);
                 color:white;
                 opacity: 1;
                 

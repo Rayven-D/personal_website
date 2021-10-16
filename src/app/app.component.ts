@@ -16,6 +16,7 @@ export class AppComponent {
   isMobile = GlobalVars.isMobile;
   smallWidth: boolean = window.innerWidth < 850;
   isNavOpen: boolean = false;
+  darkModeOn: boolean = true;
   version = environment.appVersion;
 
   constructor(private router: Router) {
@@ -85,5 +86,13 @@ export class AppComponent {
   public navOpen(event: any){
     this.isNavOpen = event;
   }
+
+  public toggleDarkMode(){
+    this.darkModeOn = !this.darkModeOn;
+    if(this.darkModeOn)
+      document.getElementsByTagName("body")[0].classList.add('dark');
+    else
+      document.getElementsByTagName("body")[0].classList.remove('dark');
+ }
 
 }

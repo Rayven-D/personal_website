@@ -1,10 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-:root{
+:root {
     --primary-color: #00BCD4;
     --accent-color: #B0BEC5;
-    --warm-color: #3F51B5;
+    --warm-color: rgb(0, 57, 138);
     --background-color: #fff;
+    --text-color: #000;
+}
+
+:root body.dark{
+    --background-color: #525252;
+    --primary-color: #3d3c3c;
+    --warm-color: #272727;
+    --text-color: #fff;
 }
 
 body { 

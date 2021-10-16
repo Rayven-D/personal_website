@@ -6,6 +6,7 @@
         height: calc(100vh - 60px);
         width: 100%;
         overflow:auto;
+        color: var(--text-color);
     }
     .resume-wrapper{
         display: grid;
@@ -17,7 +18,7 @@
     
         .resume-title{
             grid-column: 1 / -1;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid var(--text-color);
     
             .title{
                 font-size:35px;
@@ -41,6 +42,7 @@
         height: calc(100vh - 60px);
         width: 100%;
         overflow:auto;
+        color: var(--text-color);
     }
     .resume-wrapper{
         display: grid;
@@ -52,7 +54,7 @@
     
         .resume-title{
             grid-column: 1 / -1;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid var(--text-color);
     
             .title{
                 font-size:35px;
