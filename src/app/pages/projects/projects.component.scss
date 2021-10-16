@@ -29,6 +29,7 @@
             ::ng-deep .mat-tab-header{
                 border-radius: 10px 10px 0 0;
                 height:auto;
+                
             }
             ::ng-deep .mat-tab-labels{
                 display: flex;
@@ -45,6 +46,9 @@
                 color:white;
                 opacity: 1;
                 
+            }
+            ::ng-deep .mat-ink-bar{
+                display:none;
             }
     
         }
@@ -93,6 +97,7 @@
             ::ng-deep .mat-tab-header::-webkit-scrollbar{
                 height:2px;
                 border: none;
+                
             }
 
             ::ng-deep .mat-tab-header::-webkit-scrollbar-thumb{
