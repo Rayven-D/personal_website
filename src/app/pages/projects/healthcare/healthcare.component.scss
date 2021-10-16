@@ -23,7 +23,7 @@
         .video-title{
             font-size: 25px;
             font-weight: 550;
-            border-bottom: 1px dotted black;
+            border-bottom: 1px dotted var(--text-color);
         }
     
         .video-player{
@@ -60,7 +60,7 @@
         .video-title{
             font-size: 25px;
             font-weight: 550;
-            border-bottom: 1px dotted black;
+            border-bottom: 1px dotted var(--text-color);
         }
     
         .video-player{

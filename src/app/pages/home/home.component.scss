@@ -6,6 +6,7 @@
         height:calc(100vh - 60px);
         overflow: auto;
         background-color: var(--background-color);
+        color: var(--text-color);
     }
     
     .home-information{
@@ -23,7 +24,8 @@
             grid-column: 1 / span 3;
             text-align: center;
             margin: auto;
-            border-bottom: 3px solid black;
+            border-bottom: 3px solid var(--text-color);
+        
     
             span{
                 font-size: 5vw;
@@ -74,7 +76,7 @@
             display:flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid var(--text-color);
     
             .languages-title{
                 margin: auto 0;
@@ -137,6 +139,7 @@
         background-color: var(--background-color);
         display:flex;
         flex-direction: column;
+        color: var(--text-color);
     }
     
     .home-information{
@@ -151,7 +154,7 @@
         .home-information-welcome {
             text-align: center;
             margin: auto;
-            border-bottom: 3px solid black;
+            border-bottom: 3px solid var(--text-color);
     
             span{
                 font-size: 35px;
@@ -197,7 +200,7 @@
             display:flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid var(--text-color);
     
             .languages-title{
                 margin: auto 0;

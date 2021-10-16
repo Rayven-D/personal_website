@@ -10,7 +10,7 @@
         font-weight: 900;
         
         #loading-first-name {
-            stroke: black;
+            stroke: var(--text-color);
             stroke-dasharray: 1231;
             stroke-dashoffset: 1231;
             animation: writing-first 4s ease infinite;    
@@ -18,7 +18,7 @@
         }
 
         #loading-second-name{
-            stroke: black;
+            stroke: var(--text-color);
             stroke-dasharray: 545;
             stroke-dashoffset: 545;
             animation: writing-second 4s ease infinite;    
