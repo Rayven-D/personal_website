@@ -116,7 +116,7 @@
                 display:none;
             }
             ::ng-deep .mat-tab-label-active, cdk-focused, cdk-mouse-focused{
-                background-color: var(--text-color);
+                background-color: var(--warm-color);
                 color:white;
                 opacity: 1;
                 
