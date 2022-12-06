@@ -15,11 +15,12 @@
     --text-color: #fff;
 }
 
-body { 
+html, body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     overflow: hidden;
-    background-color: var(--background-color);
+    height: 100vh;
+    background-color: black;
 }
 
 

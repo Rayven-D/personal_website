@@ -1,0 +1,59 @@
+.welcome-screen-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .letter{
+        height: 20rem;
+        aspect-ratio: 1 / 1;
+        margin-top: -7.5rem;
+        border-radius: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        animation: circle-keyframes 2s linear infinite forwards;
+
+        svg{
+            position:fixed;
+            height: 15rem;
+            width: 15rem;
+
+            path {
+                fill: white;
+            }
+
+        }
+        z-index: 2;
+    }
+
+    .text{
+        color:white;
+        position: fixed;
+        bottom: 15rem;
+        font-size: 2rem;
+    }
+
+}
+
+@keyframes circle-keyframes {
+    0% {
+        box-shadow: 0 -5px 0 white;
+    }
+    25% {
+        box-shadow: -5px 0 0 white;
+    }
+    50% {
+        box-shadow: 0 5px 0 white;
+    }
+    75% {
+        box-shadow: 5px 0 0 white;
+    }
+    100% {
+        box-shadow: 0 -5px 0 white;
+    }
+
+    
+}
