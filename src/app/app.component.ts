@@ -1,7 +1,6 @@
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { GlobalVars } from './common/global-vars';
-import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-root',
@@ -13,11 +12,9 @@ export class AppComponent {
   title = 'rayven-website';
   navLinks: any[];
   activeLinkIndex = -1;
-  isMobile = GlobalVars.isMobile;
   smallWidth: boolean = window.innerWidth < 850;
   isNavOpen: boolean = false;
   darkModeOn: boolean = true;
-  version = environment.appVersion;
 
   constructor(private router: Router) {
     this.navLinks = [
@@ -62,15 +59,13 @@ export class AppComponent {
       document.addEventListener("DOMContentLoaded", function() {
         document.getElementsByTagName("body")[0].classList.add('mobile');
       })
-      GlobalVars.isMobile = true;
-      this.isMobile = true;
+
 
     }else{
       document.addEventListener("DOMContentLoaded", function() {
         document.getElementsByTagName("body")[0].classList.add('desktop')
       })
-      GlobalVars.isMobile = false;
-      this.isMobile = false;
+
     }
   }
 
